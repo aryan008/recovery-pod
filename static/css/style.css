@@ -595,3 +595,50 @@ footer {
     }
 }
 
+@media only screen and (max-width:450px) {
+    .left-div li, .right-div li {
+        height: 50px;
+        width: 50px;
+        padding: 10px 2px;
+        font-size: .55rem;
+    }
+
+    #home-page-circle {
+        margin: -15px 0;
+        right: 10px;
+    }
+
+    .edit-button, .delete-button {
+        font-size: .5rem;
+    }
+
+    .user-delete-button {
+        font-size: .6rem;
+    }
+
+    .result-container {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .inner-container {
+        width: 14rem;
+        height: 14rem;
+    }
+
+    .result-div {
+        font-size: .7rem;
+        margin-bottom: 20px;
+    }
+
+    .result-div p {
+        font-size: 4rem;
+        margin-top: 30px;
+    }
+
+    .result-text {
+        font-size: .7rem;
+        margin-top: 50px;
+    }
+}
+
