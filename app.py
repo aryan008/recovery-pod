@@ -259,6 +259,22 @@ def new_entry():
         # get the date difference between today and last entry
         date_difference = abs((new_today - new_entry).days)
 
+        # if this date difference is not zero
+        if date_difference !=0:
+            # if the user posts
+            if request.method == "POST":
+                # grab the username
+                username = mongo.db.users.find_one(
+                {"username": session["user"]})["username"]
+
+                # call the get_result() function
+                result = get_result(username)
+
+                # get the choices entered by the user
+                final_attributes = request.form.getlist("options.choice")
+                # start the total counter
+                total = 0
+
 
 # function to get the date of the last entry by the user
 def get_date(username):
