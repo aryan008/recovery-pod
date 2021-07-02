@@ -275,6 +275,20 @@ def new_entry():
                 # start the total counter
                 total = 0
 
+                # set up the attribute queries to get each individual response
+                # Note that the score calculation/attribute querying is compliant with the DRY principle.
+                # Despite the formulae looking similar for the edit_entry, new_entry & get_result sections of
+                # this file, based on varying factors they are pulling different stored dictionary information to get
+                # the necessary attributes selected
+                attr_1_query = final_attributes[0]
+                attr_2_query = final_attributes[1]
+                attr_3_query = final_attributes[2]
+                attr_4_query = final_attributes[3]
+                attr_5_query = final_attributes[4]
+                attr_6_query = final_attributes[5]
+                attr_7_query = final_attributes[6]
+                attr_8_query = final_attributes[7]
+
 
 # function to get the date of the last entry by the user
 def get_date(username):
