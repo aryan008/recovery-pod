@@ -5,5 +5,17 @@
         <h3 class=text-center>{{ username }}'s Profile</h3>
         <hr class="featurette-divider">
         <br>
+        <!--if statement to check if user has any entries before-->
+        {% if result == "No entry yet, please submit one" %}
+        <h3 class="text-center awaiting-entry">No entry yet since you created the account, please submit one.</h3>
+        <!--else if statement to see if the latest entry is from today-->
+        {% elif date_difference ==0 %}
+        <div class="result-container">
+            <div class="inner-container">
+                <h6 class="result-div text-center">
+                    Today's result - Your score is:
+                    <p>{{ result }}%</p>
+                </h6>
+                <br>
 
 {% endblock %}
