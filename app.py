@@ -231,6 +231,31 @@ def logout():
     return redirect(url_for("login"))
 
 
+# function to get the date of the last entry by the user
+def get_date(username):
+    # try statement in case the user has not submitted an entry yet
+    try:
+        # get the username
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+
+        # find the latest entry made by the user
+        latest_entry_date = mongo.db.entries.find({"created_by": username}).sort(username, -1)
+        
+        # iterate through the latest entry and return the final date of the entry
+        initial_list_date = list(latest_entry_date)
+        last_entry_date = initial_list_date[-1]
+        last_entry_list_date = list(last_entry_date.items())
+        final_date = last_entry_list_date[3][1]
+        return final_date
+    
+    # IndexError if the user has no previous submissions
+    except IndexError as error:
+        # use of datetime to get todays date
+        todays_date = datetime.today().strftime('%Y-%m-%d')
+        return todays_date
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
