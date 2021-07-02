@@ -657,6 +657,21 @@ def search_entries():
     return render_template("all_entries.html", full_entries_list=entries)
 
 
+# Route for the administrator to manage users profiles based on username
+@app.route("/manage_users/", methods=["GET", "POST"])
+def manage_users():
+    # Only admin can access this page
+    if session['user'] == 'admin':
+        # get all users and turn into a list
+        full_users = mongo.db.users.find()
+        full_users_list = list(full_users)
+        
+        return render_template("manage_users.html", full_users_list=full_users_list)
+
+    else:
+        abort(404)
+
+
 # function to get the date of the last entry by the user
 def get_date(username):
     # try statement in case the user has not submitted an entry yet
