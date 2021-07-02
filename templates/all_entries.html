@@ -5,6 +5,21 @@
         <div class="col-10 offset-1 mt-3 mb-3">
             <h3 class=text-center>All Entries</h3>
             <hr class="featurette-divider">
+            <!--Search form for the user to interact with-->
+            <form action="{{ url_for('search_entries') }}" method="post">
+                <div>
+                    <label for="query_entry">
+                        <h4 class="me-2">Search Users</h4>
+                    </label>
+                    <input type="text" name="query_entry" id="query_entry" class="validate search-bar" required>
+                </div>
+                <br>
+                <div>
+                    <a href="{{ url_for('all_entries') }}" type="button" class="btn btn-danger btn-sm reset-button">Reset</a>
+                    <button type="submit" type="button" class="btn btn-info btn-sm search-button">Search</button>
+                </div>
+            </form>
+            <br>
 
 
 {% endblock %}
