@@ -175,3 +175,30 @@ footer {
 #home-page-list-hydration {
     background-color: rgb(0, 166, 243);
 }
+
+/*---about.html---*/ 
+.featurette-image {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    border: 2px solid rgb(255,255,255);
+    box-shadow: 0px 0px 20px rgba(100, 100, 100, 0.877);
+    margin: 35px auto;
+    /*---https://css-tricks.com/almanac/properties/i/image-rendering/---*/
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+.attribute-importance {
+    border: 3px solid rgb(46, 45, 45);
+    border-radius: 10px;
+    padding: 10px;
+    color: rgb(46, 45, 45);
+    background-color: rgb(255,255,255);
+    box-shadow: 0px 0px 20px rgba(100, 100, 100, 0.877);
+}
+
+.links {
+    color: rgb(143, 198, 235);
+}
