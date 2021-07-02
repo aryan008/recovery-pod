@@ -402,3 +402,41 @@ footer {
         font-size: .7rem;
     }
 }
+
+@media only screen and (max-width:830px) {
+    #home-page-circle {
+        width:20%;
+        height: 100px;
+        width: 100px;
+        border-radius: none;
+        border: none;
+        margin: 35px auto;
+        text-align: center;
+        padding: 110px 10px;
+        box-shadow: none;
+        position: relative;
+    }
+
+    #home-page-circle h4 {
+        font-size: .8rem;
+        border-radius: 10px;
+        border: 2px solid rgb(255,255,255);
+        padding: 30px 0;
+        text-align: center;
+        margin: 0 auto;
+        height: 100px;
+        width: 100px;
+        box-shadow: 0px 0px 20px rgba(100, 100, 100, 0.877);
+    }    
+
+    .right-div {
+        margin-left: -5px;
+    }
+
+    .left-div li, .right-div li {
+        height: 80px;
+        width: 80px;
+        padding: 25px 5px;
+        font-size: .8rem;
+    }
+}
