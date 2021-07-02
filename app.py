@@ -23,10 +23,28 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 # Route for the home page
 @app.route("/")
-def hello():
-    return "Hello"
+@app.route("/get_recovery")
+def get_recovery():
+    # Get the recovery collection from Mongo DB
+    recovery = mongo.db.recovery.find()
+    # Try statement to determine if the user is in session
+    try:
+        if session["user"]:
+            user_check = "Yes"
+
+        else:
+            user_check = "No"
+
+    # If no user is in session
+    except KeyError as error:
+        user_check = "No"
+
+    # Render template with appropriate variables
+    return render_template("recovery.html", recovery=recovery, user_check=user_check)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
