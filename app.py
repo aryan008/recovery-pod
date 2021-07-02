@@ -331,6 +331,21 @@ def edit_entry(username):
                 attr_8_result = list(ATTRIBUTE_8_DICT.values())[2]
             total += attr_8_result
 
+            # a dictionary is created based on the users form choices to update the entry
+            update = {
+                "option_choice": request.form.getlist("options.choice"),
+                "created_by": session["user"],
+                "user_chosen_date": request.form.get("date_choice"),
+                "submission_date": datetime.today().strftime('%Y-%m-%d'),
+                "comment_text": request.form.get("comment_text"),
+                "name": mongo.db.users.find_one({"username": session["user"]})["_id"],
+                "score": total
+            }
+            # update the Mongo DB with the users entry
+            mongo.db.entries.update({"_id": edit_id}, update)
+            flash("Edit of entry successful!")
+            return redirect(url_for("profile", username=username))
+
 
 # Route for the user to log out of their profile
 @app.route("/logout")
