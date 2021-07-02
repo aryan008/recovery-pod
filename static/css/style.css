@@ -142,3 +142,36 @@ footer {
     font-size: .8rem;
     position: relative;
 }
+
+/*---home page div positioning---*/ 
+#home-page-list-cold-therapy {
+    background-color: rgb(84, 194, 245);
+}
+
+#home-page-list-stretch {
+    background-color: rgb(243, 186, 0);
+}
+
+#home-page-list-nutrition {
+    background-color: rgb(88, 224, 106);
+}
+
+#home-page-list-smr {
+    background-color: rgb(233, 132, 107);
+}
+
+#home-page-list-training {
+    background-color: rgb(255, 244, 93);
+}
+
+#home-page-list-feeling {
+    background-color: rgb(161, 255, 93);
+}
+
+#home-page-list-sleep {
+    background-color: rgb(230, 137, 253);
+}
+
+#home-page-list-hydration {
+    background-color: rgb(0, 166, 243);
+}
