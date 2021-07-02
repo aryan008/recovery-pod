@@ -222,6 +222,25 @@ def delete_entry(username):
         abort(404)
 
 
+# Route for the user to edit their entry for the day
+@app.route("/edit_entry/<username>", methods=["GET", "POST"])
+def edit_entry(username):
+    # find the users username
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    # if the user is in session
+    if session["user"]:
+        # find that user's latest entry
+        latest_entry_edit = mongo.db.entries.find({"created_by": username}).sort(username, -1)  
+        latest_edit = list(latest_entry_edit)
+        last_entry_list = latest_edit[-1]
+        last_entry_list_final = list(last_entry_list.items())
+        final_edit = last_entry_list_final[1][1]
+        edit_id = last_entry_list_final[0][1]
+        # above code used to grab the _id of the users latest entry
+
+
 # Route for the user to log out of their profile
 @app.route("/logout")
 def logout():
