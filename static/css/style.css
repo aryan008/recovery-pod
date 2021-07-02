@@ -10,3 +10,21 @@
     background-color: rgb(46, 45, 45);
     color: rgb(255,255,255);
 }
+
+.navbar {
+    padding: 0;
+}
+
+.flashes {
+    padding: 15px;
+    text-align: center;
+}
+
+.active {
+    text-decoration: underline;
+    font-size: 1.1em;
+}
+
+button, .links {
+    cursor: pointer;
+}
