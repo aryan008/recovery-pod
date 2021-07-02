@@ -379,6 +379,16 @@ def new_entry():
             flash("You have made today's entry already!")
             return redirect(url_for("profile", username=username))
 
+    # IndexError statement if the user does not have any entries since account creation
+    except IndexError as error:
+        # if the user posts
+        if request.method == "POST":
+            # grab the users username
+            username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+            # call the get_result() function
+            result = get_result(username)
+
 
 # function to get the date of the last entry by the user
 def get_date(username):
