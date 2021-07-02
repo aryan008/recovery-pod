@@ -21,5 +21,24 @@
                 </div>
             </form>
             <br>
+            <!--if the username search have a result, they will show. Or else narrative on no results found-->
+            {% if full_users_list|length > 0 %}
+            <!--for loop to get all usernames-->
+            {% for user in full_users_list %}
+            <!--https://stackoverflow.com/questions/9139075/how-to-show-a-confirm-message-before-delete-->
+            <!--username deletion button with message confirmation-->
+            Username: {{ user.username }} <a href="{{ url_for('delete_user', username=user.username) }}"
+                onclick="return confirm('Are you sure you want to delete this profile?');"
+                class="btn btn-danger btn-sm user-delete-button">Delete</a>
+            <br>
+            <hr class="featurette-divider">
+            {% endfor %}
+            {% else %}
+            <!--narrative if no results found-->
+            <h3>No Results Found</h3>
+            {% endif %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}
