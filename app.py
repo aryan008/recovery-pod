@@ -494,6 +494,24 @@ def new_entry():
         abort(500)
 
 
+# Route for the user to view all entries on the all_entries page
+@app.route("/all_entries")
+def all_entries():
+    # if the user is in session
+    if session['user']:
+        # get all the entries ever made and turn into a list
+        full_entries = mongo.db.entries.find()
+        full_entries_list = list(full_entries)
+
+        # https://www.programiz.com/python-programming/methods/list/reverse
+        # reverse the list
+        reversed_list = full_entries_list.reverse()
+        return render_template("all_entries.html", full_entries_list=full_entries_list)
+    
+    else:
+        abort(404)
+
+
 # function to get the date of the last entry by the user
 def get_date(username):
     # try statement in case the user has not submitted an entry yet
