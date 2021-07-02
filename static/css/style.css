@@ -28,3 +28,38 @@
 button, .links {
     cursor: pointer;
 }
+
+footer {
+    clear: both;
+    position: relative;
+}
+
+.footer-links a span i {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid rgb(255,255,255);
+    margin: 5px;
+    cursor: pointer;
+    font-size: 40px;
+    padding: 20px 0;
+}
+
+.footer-links a span i:hover {
+    background-color: rgb(46, 45, 45);
+}
+
+.twitter {
+    color: rgb(6, 179, 209);
+    background-color: rgb(255,255,255);
+}
+
+.facebook {
+    color: rgb(33, 83, 190);
+    background-color: rgb(255,255,255);
+}
+
+.github {
+    color: rgb(228, 6, 6);
+    background-color: rgb(255,255,255);
+}
