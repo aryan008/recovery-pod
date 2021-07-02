@@ -501,3 +501,44 @@ footer {
     }
 }
 
+@media only screen and (max-width:576px) {
+    .right-div {
+        margin-left: -35px;
+    }
+
+    .account-button {
+        font-size: 1rem;
+    }
+
+    .login-button, .pw-change-button, #passwordHelpInline, .reset-button, .search-button, .delete-account-button {
+        font-size: .8rem;
+    }
+
+    .table-entries {
+        font-size: .8rem;
+    }
+
+    .result-container {
+        width: 27rem;
+        height: 27rem;
+    }
+
+    .inner-container {
+        width: 22rem;
+        height: 22rem;
+    }
+
+    .result-div {
+        font-size: .7rem;
+    }
+
+    .result-div p {
+        font-size: 8rem;
+    }
+
+    .result-text {
+        font-size: 1rem;
+        margin-top: 150px;
+    }
+}
+
