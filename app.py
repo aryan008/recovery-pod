@@ -256,6 +256,114 @@ def get_date(username):
         return todays_date
 
 
+# function to get the result of the users recovery score based on the entry form submission
+def get_result(username):
+    # try statement to see if the user has submitted an entry for today
+    try:
+        # grab the username
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+
+        # find the latest entry
+        latest_entry = mongo.db.entries.find({"created_by": username}).sort(username, -1)
+        
+        # get the options chosen by the user on their entry for today
+        initial_list = list(latest_entry)
+        last_entry = initial_list[-1]
+        last_entry_list = list(last_entry.items())
+        final_attributes = last_entry_list[1][1]
+
+        # start the total counter
+        total = 0
+
+        # The below if statements match the user's responses on an 
+        # attribute-by-attribute basis and get the correct values from the constant dictionaries.
+        # The resulting score is then added to the above total counter.
+        # Note that the score calculation/attribute querying is compliant with the DRY principle.
+        # Despite the formulae looking similar for the edit_entry, new_entry & get_result sections of
+        # this file, based on varying factors they are pulling different stored dictionary information to get
+        # the necessary attributes selected 
+        attr_1_query = final_attributes[0]
+        attr_2_query = final_attributes[1]
+        attr_3_query = final_attributes[2]
+        attr_4_query = final_attributes[3]
+        attr_5_query = final_attributes[4]
+        attr_6_query = final_attributes[5]
+        attr_7_query = final_attributes[6]
+        attr_8_query = final_attributes[7]
+
+        if attr_1_query == list(ATTRIBUTE_1_DICT.keys())[0]:
+            attr_1_result = list(ATTRIBUTE_1_DICT.values())[0]
+        elif attr_1_query == list(ATTRIBUTE_1_DICT.keys())[1]:
+            attr_1_result = list(ATTRIBUTE_1_DICT.values())[1]
+        elif attr_1_query == list(ATTRIBUTE_1_DICT.keys())[2]:
+            attr_1_result = list(ATTRIBUTE_1_DICT.values())[2]
+        total += attr_1_result
+        
+        if attr_2_query == list(ATTRIBUTE_2_DICT.keys())[0]:
+            attr_2_result = list(ATTRIBUTE_2_DICT.values())[0]
+        elif attr_2_query == list(ATTRIBUTE_2_DICT.keys())[1]:
+            attr_2_result = list(ATTRIBUTE_2_DICT.values())[1]
+        elif attr_2_query == list(ATTRIBUTE_2_DICT.keys())[2]:
+            attr_2_result = list(ATTRIBUTE_2_DICT.values())[2]
+        total += attr_2_result
+
+        if attr_3_query == list(ATTRIBUTE_3_DICT.keys())[0]:
+            attr_3_result = list(ATTRIBUTE_3_DICT.values())[0]
+        elif attr_3_query == list(ATTRIBUTE_3_DICT.keys())[1]:
+            attr_3_result = list(ATTRIBUTE_3_DICT.values())[1]
+        elif attr_3_query == list(ATTRIBUTE_3_DICT.keys())[2]:
+            attr_3_result = list(ATTRIBUTE_3_DICT.values())[2]
+        total += attr_3_result
+
+        if attr_4_query == list(ATTRIBUTE_4_DICT.keys())[0]:
+            attr_4_result = list(ATTRIBUTE_4_DICT.values())[0]
+        elif attr_4_query == list(ATTRIBUTE_4_DICT.keys())[1]:
+            attr_4_result = list(ATTRIBUTE_4_DICT.values())[1]
+        elif attr_4_query == list(ATTRIBUTE_4_DICT.keys())[2]:
+            attr_4_result = list(ATTRIBUTE_4_DICT.values())[2]
+        total += attr_4_result
+
+        if attr_5_query == list(ATTRIBUTE_5_DICT.keys())[0]:
+            attr_5_result = list(ATTRIBUTE_5_DICT.values())[0]
+        elif attr_5_query == list(ATTRIBUTE_5_DICT.keys())[1]:
+            attr_5_result = list(ATTRIBUTE_5_DICT.values())[1]
+        elif attr_5_query == list(ATTRIBUTE_5_DICT.keys())[2]:
+            attr_5_result = list(ATTRIBUTE_5_DICT.values())[2]
+        total += attr_5_result
+
+        if attr_6_query == list(ATTRIBUTE_6_DICT.keys())[0]:
+            attr_6_result = list(ATTRIBUTE_6_DICT.values())[0]
+        elif attr_6_query == list(ATTRIBUTE_6_DICT.keys())[1]:
+            attr_6_result = list(ATTRIBUTE_6_DICT.values())[1]
+        elif attr_6_query == list(ATTRIBUTE_6_DICT.keys())[2]:
+            attr_6_result = list(ATTRIBUTE_6_DICT.values())[2]
+        total += attr_6_result
+
+        if attr_7_query == list(ATTRIBUTE_7_DICT.keys())[0]:
+            attr_7_result = list(ATTRIBUTE_7_DICT.values())[0]
+        elif attr_7_query == list(ATTRIBUTE_7_DICT.keys())[1]:
+            attr_7_result = list(ATTRIBUTE_7_DICT.values())[1]
+        elif attr_7_query == list(ATTRIBUTE_7_DICT.keys())[2]:
+            attr_7_result = list(ATTRIBUTE_7_DICT.values())[2]
+        total += attr_7_result
+
+        if attr_8_query == list(ATTRIBUTE_8_DICT.keys())[0]:
+            attr_8_result = list(ATTRIBUTE_8_DICT.values())[0]
+        elif attr_8_query == list(ATTRIBUTE_8_DICT.keys())[1]:
+            attr_8_result = list(ATTRIBUTE_8_DICT.values())[1]
+        elif attr_8_query == list(ATTRIBUTE_8_DICT.keys())[2]:
+            attr_8_result = list(ATTRIBUTE_8_DICT.values())[2]
+        total += attr_8_result    
+        
+        return total
+
+    # IndexError narrative return for users that havent submitted an entry for today
+    except IndexError as error:
+        narrative = "No entry yet, please submit one"
+        return narrative
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
