@@ -689,6 +689,23 @@ def search_users():
         return render_template("manage_users.html", full_users_list=users)
 
 
+# Route for the administrator to delete all users based on username
+@app.route("/delete_user/<username>", methods=["GET", "POST"])
+def delete_user(username):
+    # Only admin can access this page
+    if session['user'] == "admin":
+        # remove the user
+        mongo.db.users.remove({"username": username})
+        # remove all entries made by the deleted user
+        mongo.db.entries.remove({"created_by": username})
+
+        flash("Removal done")
+        return redirect(url_for("about"))
+
+    else:
+        abort(404)
+        
+
 # function to get the date of the last entry by the user
 def get_date(username):
     # try statement in case the user has not submitted an entry yet
