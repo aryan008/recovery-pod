@@ -578,3 +578,20 @@ footer {
     }
 }
 
+@media only screen and (max-width:475px) {
+    .left-div li, .right-div li {
+        height: 60px;
+        width: 60px;
+        padding: 15px 5px;
+        font-size: .6rem;
+    }
+
+    #home-page-circle {
+        margin: 10px auto;
+    }
+
+    .entry-option-headings {
+        font-size: 1.5rem;
+    }
+}
+
