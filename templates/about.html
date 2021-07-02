@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-10 offset-1 mt-3">
+        <h1 class="text-center mb-3">What Attributes do we measure?</h1>
+        <hr class="featurette-divider">
+        <br>
+        <!--for loop to bring in the json attributes-->
+        {% for attr in attribute_json %}
+        <!--if statement to pattern the json information in a criss-cross fashion-->
+        {% if loop.index % 2 != 0 %}
+        <div class="row featurette">
+            <div class="col-xxl-8 col-lg-8 col-md-8">
+                <h2 class="text-center">{{ attr.attribute_name }} <i class="{{ attr.attribute_icon }}"></i></h2>
+                <p class="attribute-importance">{{ attr.attribute_importance }}</p>
+                <p><em>Read More:</em>
+                    <u>
+                        <a class="font-weight-bold links" href="{{ attr.importance_link_info }}" target="_blank"
+                            rel="noopener">{{ attr.importance_link_info }}</a>
+                    </u>
+                </p>
+            </div>
+            <div class="col-xxl-4 col-lg-3 col-md-2">
+                <img src="{{ attr.img_src }}" alt="{{ attr.img_alt_tag }}" class="featurette-image image-responsive">
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        {% else %}
+        <div class="row featurette">
+            <div class="col-xl-4 col-lg-4 col-md-4">
+                <img src="{{ attr.img_src }}" alt="{{ attr.img_alt_tag }}" class="featurette-image image-responsive">
+            </div>
+            <div class="col-xl-7 offset-1 col-lg-7 offset-1 col-md-7 offset-1">
+                <h2 class="text-center">{{ attr.attribute_name }} <i class="{{ attr.attribute_icon }}"></i></h2>
+                <p class="attribute-importance">{{ attr.attribute_importance }}</p>
+                <p><em>Read More:</em>
+                    <u>
+                        <a class="font-weight-bold links" href="{{ attr.importance_link_info }}" target="_blank"
+                            rel="noopener">{{ attr.importance_link_info }}</a>
+                    </u>
+                </p>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
