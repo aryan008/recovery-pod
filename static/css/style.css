@@ -672,3 +672,28 @@ footer {
     }
 }
 
+@media only screen and (max-width:360px) {
+    #home-page-circle h4 {
+        font-size: .7rem;
+        padding: 10px 0;
+        height: 60px;
+        width: 60px;
+        margin-left: 5px;
+    }
+
+    .table-entries {
+        font-size: .6rem;
+    }
+
+    #comment_text {
+        width: 210px;
+    }
+
+    .option-narratives {
+        font-size: .8rem;
+    }
+
+    .edit-task-button, .cancel-button, .post-entry-button {
+        font-size: .8rem;
+    }
+}
