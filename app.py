@@ -240,6 +240,30 @@ def edit_entry(username):
         edit_id = last_entry_list_final[0][1]
         # above code used to grab the _id of the users latest entry
 
+        # once the user updates their entry
+        if request.method == "POST":
+            # call the get_result() function
+            result = get_result(username)
+
+            # grab the user's form choices from the entry form
+            final_attributes = request.form.getlist("options.choice")
+            # start the total counter
+            total = 0
+
+            # Note that the score calculation/attribute querying is compliant with the DRY principle.
+            # Despite the formulae looking similar for the edit_entry, new_entry & get_result sections of
+            # this file, based on varying factors they are pulling different stored dictionary information to get
+            # the necessary attributes selected 
+            # set up the attribute queries to get each individual response
+            attr_1_query = final_attributes[0]
+            attr_2_query = final_attributes[1]
+            attr_3_query = final_attributes[2]
+            attr_4_query = final_attributes[3]
+            attr_5_query = final_attributes[4]
+            attr_6_query = final_attributes[5]
+            attr_7_query = final_attributes[6]
+            attr_8_query = final_attributes[7]
+
 
 # Route for the user to log out of their profile
 @app.route("/logout")
