@@ -63,3 +63,15 @@ footer {
     color: rgb(228, 6, 6);
     background-color: rgb(255,255,255);
 }
+
+.recovered {
+    background-color: rgb(15, 145, 15) !important;
+}
+
+.moderate {
+    background-color: rgb(216, 216, 39) !important;
+}
+
+.low {
+    background-color: rgb(190, 16, 16) !important;
+}
