@@ -371,6 +371,14 @@ def new_entry():
                 flash("Entry Successfully Added")
                 return redirect(url_for("profile", username=username))
 
+            # grab the form options from mongo db
+            options = mongo.db.recovery.find()
+            return render_template("new_entry.html", options = options, date_difference=date_difference)
+
+        else:
+            flash("You have made today's entry already!")
+            return redirect(url_for("profile", username=username))
+
 
 # function to get the date of the last entry by the user
 def get_date(username):
