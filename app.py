@@ -356,6 +356,21 @@ def new_entry():
                     attr_8_result = list(ATTRIBUTE_8_DICT.values())[2]
                 total += attr_8_result
 
+                # a dictionary is created based on the users form choices to create the entry
+                entry = {
+                    "option_choice": request.form.getlist("options.choice"),
+                    "created_by": session["user"],
+                    "user_chosen_date": request.form.get("date_choice"),
+                    "submission_date": datetime.today().strftime('%Y-%m-%d'),
+                    "comment_text": request.form.get("comment_text"),
+                    "name": mongo.db.users.find_one({"username": session["user"]})["_id"],
+                    "score": total
+                }
+                # insert the entry into the database
+                mongo.db.entries.insert_one(entry)
+                flash("Entry Successfully Added")
+                return redirect(url_for("profile", username=username))
+
 
 # function to get the date of the last entry by the user
 def get_date(username):
