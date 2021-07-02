@@ -5,5 +5,21 @@
         <div class="col-8 offset-2 mt-3 mb-3">
             <h3 class=text-center>Manage Users</h3>
             <hr class="featurette-divider">
+            <!--form for the admin to search users-->
+            <form action="{{ url_for('search_users') }}" method="post">
+                <div>
+                    <label for="query_user">
+                        <h4 class="me-2">Search Users</h4>
+                    </label>
+                    <input type="text" name="query_user" id="query_user" class="validate search-bar" required>
+                </div>
+                <br>
+                <div>
+                    <!--reset and search redirect/button respectively-->
+                    <a href="{{ url_for('manage_users') }}" class="btn btn-danger btn-sm reset-button">Reset</a>
+                    <button type="submit" class="btn btn-info btn-sm search-button">Search</button>
+                </div>
+            </form>
+            <br>
 
 {% endblock %}
