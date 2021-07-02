@@ -345,7 +345,7 @@ def edit_entry(username):
             mongo.db.entries.update({"_id": edit_id}, update)
             flash("Edit of entry successful!")
             return redirect(url_for("profile", username=username))
-            
+
          # the options to populate the form are grabbed from Mongo DB    
         options = mongo.db.recovery.find()
         return render_template("edit_entry.html", username=username, options=options)
@@ -642,6 +642,19 @@ def all_entries():
     
     else:
         abort(404)
+
+
+# Route for the user to search all entries based on username
+@app.route("/search_entries", methods=["GET", "POST"])
+def search_entries():
+    # get the users search input
+    query_entry = request.form.get("query_entry")
+
+    # Index creation: https://docs.mongodb.com/manual/indexes/
+    # find the users search input in the database
+    entries = list(mongo.db.entries.find({"$text": {"$search": query_entry}}))
+    
+    return render_template("all_entries.html", full_entries_list=entries)
 
 
 # function to get the date of the last entry by the user
