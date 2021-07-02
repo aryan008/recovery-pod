@@ -472,3 +472,32 @@ footer {
         font-size: 1.3rem;
     }
 }
+
+@media only screen and (max-width:606px) {
+    .right-div {
+        margin-left: -25px;
+    }
+
+    .result-container {
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .inner-container {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    .result-div {
+        font-size: .8rem;
+    }
+
+    .result-div p {
+        font-size: 9.5rem;
+    }
+
+    .result-text {
+        font-size: 1.1rem;
+    }
+}
+
