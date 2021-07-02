@@ -345,6 +345,7 @@ def edit_entry(username):
             mongo.db.entries.update({"_id": edit_id}, update)
             flash("Edit of entry successful!")
             return redirect(url_for("profile", username=username))
+            
          # the options to populate the form are grabbed from Mongo DB    
         options = mongo.db.recovery.find()
         return render_template("edit_entry.html", username=username, options=options)
