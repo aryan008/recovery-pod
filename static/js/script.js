@@ -56,3 +56,17 @@ $('.result-container').each(function() {
         $(this).addClass( "low" );
     }
 });
+
+/* The below function checks that the password reset feature works appropriately*/
+function passwordCheck() {
+    // get the new password
+    let password = document.querySelector('#newpassword');
+    // get the reentered password
+    let confirm = document.querySelector('#confirmpassword');
+    // if they are the same, update the password. If not, let the user know the passwords dont match
+    if(confirm.value == password.value) {
+        confirm.setCustomValidity('');
+    } else {
+        confirm.setCustomValidity('New password does not match the re-entered value');
+    }
+}
