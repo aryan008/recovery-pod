@@ -46,6 +46,34 @@ def get_recovery():
     return render_template("recovery.html", recovery=recovery, user_check=user_check)
 
 
+# Route for the create account page
+@app.route("/create_account", methods=["GET", "POST"])
+def create_account():
+    if request.method == "POST":
+        # check if username already exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        # if the username has already been created, redirect and flash message
+        if existing_user:
+            flash("Username already exists! Please choose another.")
+            return redirect(url_for("create_account"))
+
+        # else statement on truthy to register the user and store in Mongo DB
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie with a welcome message and redirect to their profile
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful! {}, thanks for joining the team.".format(request.form.get("username")))
+        return redirect(url_for("profile", username=session["user"]))
+
+    return render_template("create_account.html")
+
+
 # Route for the user to view the about page
 @app.route("/about")
 def about():
