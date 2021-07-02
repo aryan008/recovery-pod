@@ -46,6 +46,17 @@ def get_recovery():
     return render_template("recovery.html", recovery=recovery, user_check=user_check)
 
 
+# Route for the user to view the about page
+@app.route("/about")
+def about():
+    # create an empty list called data
+    data = []
+    # with statement to get the JSON file information and load into the data list
+    with open("data/attributes.json", "r") as json_data:
+        data = json.load(json_data)
+    return render_template("about.html", attribute_json=data)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
