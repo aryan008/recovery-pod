@@ -231,6 +231,35 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Route for the user to make a new entry
+@app.route("/new_entry/", methods=["GET", "POST"])
+def new_entry():
+    # Try statement to grab the users last entry
+    # This is necessary as the user may not have any entries yet
+    try:
+        # grab the username from the DB
+        username = mongo.db.users.find_one(
+                {"username": session["user"]})["username"]
+
+        # find the users latest entry
+        latest_entry_date = mongo.db.entries.find({"created_by": username}).sort(username, -1)
+
+        # get the date of the last entry of the user    
+        initial_list_date = list(latest_entry_date)
+        last_entry_date = initial_list_date[-1]
+        last_entry_list_date = list(last_entry_date.items())
+        final_date = last_entry_list_date[3][1]
+
+        # get todays date and format the same as the last entry date
+        today = datetime.today().strftime('%Y-%m-%d')
+        new_entry = datetime.strptime(final_date, "%Y-%m-%d")
+        new_today = datetime.strptime(today, "%Y-%m-%d")
+
+        # https://stackoverflow.com/questions/8419564/difference-between-two-dates-in-python
+        # get the date difference between today and last entry
+        date_difference = abs((new_today - new_entry).days)
+
+
 # function to get the date of the last entry by the user
 def get_date(username):
     # try statement in case the user has not submitted an entry yet
