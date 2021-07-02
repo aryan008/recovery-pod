@@ -143,6 +143,24 @@ def about():
     return render_template("about.html", attribute_json=data)
 
 
+# Route for the user to delete their own individual profile
+@app.route("/delete_user_user/<username>", methods=["GET", "POST"])
+def delete_user_user(username):
+    # grab the user's username
+    username_user = mongo.db.users.find_one({"username": session["user"]})
+    
+    if session['user']:
+        # remove the users account from the DB and all the entries they have made
+        mongo.db.users.remove({"username": username})
+        mongo.db.entries.remove({"created_by": username})
+        session.pop("user")
+        flash("Profile Deleted!")
+        return redirect(url_for("create_account"))
+
+    else:
+        abort(404)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
