@@ -321,3 +321,18 @@ footer {
 #comment_text {
     width: 300px;
 }
+
+/*---pw_change.html---*/ 
+.password-div, .login-div, .create-account-div {
+    border: 3px solid rgb(255,255,255);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(100, 100, 100, 0.877);
+}
+
+#form-text {
+    color: rgb(255,255,255)
+}
+
+.form-warning-img {
+    color: rgb(248, 240, 0);
+}
