@@ -18,3 +18,21 @@ jQuery(function ($) {
         }
     });
 });
+
+/* The below function applies the correct class to the score of the user for all entries */
+$('.score-percentage').each(function() {
+    let tableScore = $(this);
+    // get the score of each entry
+    let score = tableScore.text()
+    // convert each score to numerical
+    let numberScore = parseInt(score)
+    
+    // apply appropriate classes depending on the score
+    if (numberScore >=70) {
+        $(this).addClass( "recovered" );
+    } else if (numberScore >= 50) {
+        $(this).addClass( "moderate" );
+    } else {
+        $(this).addClass( "low" );
+    }
+}); 
