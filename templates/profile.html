@@ -43,5 +43,22 @@
                 {% endif %}
                 </p>
             </div>
-
+        </div>
+        <br>
+        <hr class="featurette-divider">
+        <!--if statement to allow the user to delete his/her account once they are not the admin-->
+        {% if username != "admin" %}
+        <div class="text-center">
+            <!--https://stackoverflow.com/questions/9139075/how-to-show-a-confirm-message-before-delete-->
+            <!--delete account button with confirmation check-->
+            <a href="{{ url_for('delete_user_user', username=username) }}"
+                onclick="return confirm('Are you sure you want to delete your account?');"
+                class="btn btn-danger btn-primary delete-account-button">Delete Account: {{ username }}</a>
+        </div>
+        <br>
+        {% else %}
+        <br>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
