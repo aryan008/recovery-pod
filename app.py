@@ -672,6 +672,23 @@ def manage_users():
         abort(404)
 
 
+# Route for the administrator to search all users based on username
+@app.route("/search_users", methods=["GET", "POST"])
+def search_users():
+    # Only admin can access this page
+    if session['user'] == "admin":
+        username = mongo.db.users.find_one({"username": session["user"]})
+
+        # get the users search input 
+        query_user = request.form.get("query_user")
+
+        # Index creation: https://docs.mongodb.com/manual/indexes/
+        # find the users search input in the database
+        users = list(mongo.db.users.find({"$text": {"$search": query_user}}))
+        
+        return render_template("manage_users.html", full_users_list=users)
+
+
 # function to get the date of the last entry by the user
 def get_date(username):
     # try statement in case the user has not submitted an entry yet
