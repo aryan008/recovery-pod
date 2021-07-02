@@ -236,6 +236,24 @@ footer {
     color: rgb(161, 255, 93);
 }
 
+/*---all_entries.html---*/ 
+.search-bar, .date-search, .options-dropdown, .comment-box {
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.score-percentage {
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50% !important;
+    background-color: white;
+}
+
+.table>:not(caption)>*>* {
+    background-color: rgb(46, 45, 45);
+}
+
 /*---profile.html---*/ 
 .result-container {
     width: 37rem;
