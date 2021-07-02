@@ -336,3 +336,29 @@ footer {
 .form-warning-img {
     color: rgb(248, 240, 0);
 }
+
+/*---Responsive media screen size design implementation---*/
+@media only screen and (max-width:1300px) {
+    #home-page-circle {
+        height: 170px;
+        
+    }
+
+    #home-page-circle h4 {
+        font-size: 1.1rem;
+    }    
+
+    .right-div {
+        margin-left: 10px;
+    }
+
+    .featurette-image {
+        width: 18rem;
+        height: 18rem;
+    }
+
+
+    .attribute-importance {
+        font-size: .9rem;
+    }
+}
