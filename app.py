@@ -490,6 +490,9 @@ def new_entry():
         options = mongo.db.recovery.find()
         return render_template("new_entry.html", options = options)
 
+    else:
+        abort(500)
+
 
 # function to get the date of the last entry by the user
 def get_date(username):
