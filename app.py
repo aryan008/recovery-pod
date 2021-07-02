@@ -161,6 +161,31 @@ def delete_user_user(username):
         abort(404)
 
 
+# Route for the user to update their password
+@app.route("/password_update", methods=["GET", "POST"])
+def password_update():
+    if request.method == "POST":
+        # find the user's current password
+        old_password = mongo.db.users.find_one(
+            {"username": session["user"]})["password"]
+
+        # if statement that checks if the entered password matches their stored password
+        if check_password_hash(old_password, request.form.get("old_password")):
+            # update the users password on the database
+            mongo.db.users.update_one(
+                {"username": session["user"]},
+                {"$set": {"password": generate_password_hash(
+                    request.form.get("newpassword"))}})
+            flash("Password Successfully updated")
+            return redirect(url_for("get_recovery"))
+        # if password entered doesn't match
+        else:
+            flash("Password is incorrect, please try again")
+            return render_template("pw_change.html")
+
+    return render_template("pw_change.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
