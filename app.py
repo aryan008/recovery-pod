@@ -74,6 +74,33 @@ def create_account():
     return render_template("create_account.html")
 
 
+# Route for the profile page
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    # if the user is in session
+    if session["user"]:
+        # call the get_result() & get_date() functions
+        result = get_result(username)
+        date_entered = get_date(username)
+        today = datetime.today().strftime('%Y-%m-%d')
+        day_1 = datetime.strptime(date_entered, "%Y-%m-%d")
+        day_2 = datetime.strptime(today, "%Y-%m-%d")
+
+        
+        # https://stackoverflow.com/questions/8419564/difference-between-two-dates-in-python
+        # get the date difference between today and last entry
+        date_difference = abs((day_1 - day_2).days)
+        
+        return render_template("profile.html", username=username, result=result, date_difference=date_difference, date_entered=date_entered)
+
+    else:
+        abort(404)
+
+
 # Route for the user to view the about page
 @app.route("/about")
 def about():
