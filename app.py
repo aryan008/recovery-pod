@@ -704,7 +704,7 @@ def delete_user(username):
 
     else:
         abort(404)
-        
+
 
 # function to get the date of the last entry by the user
 def get_date(username):
@@ -837,6 +837,18 @@ def get_result(username):
     except IndexError as error:
         narrative = "No entry yet, please submit one"
         return narrative
+
+
+# 404 error handler
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+# 500 error handler
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html'), 500
 
 
 if __name__ == "__main__":
