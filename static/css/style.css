@@ -440,3 +440,35 @@ footer {
         font-size: .8rem;
     }
 }
+
+@media only screen and (max-width:762px) {
+    .right-div {
+        margin-left: -15px;
+    }
+
+    .featurette-image {
+        display: none;
+    }
+
+    .result-container {
+        width: 32rem;
+        height: 32rem;
+    }
+
+    .inner-container {
+        width: 27rem;
+        height: 27rem;
+    }
+
+    .result-div {
+        font-size: 1rem;
+    }
+
+    .result-div p {
+        font-size: 10.5rem;
+    }
+
+    .result-text {
+        font-size: 1.3rem;
+    }
+}
