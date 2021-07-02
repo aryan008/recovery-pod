@@ -642,3 +642,33 @@ footer {
     }
 }
 
+@media only screen and (max-width:400px) {
+    .home-page-create-account, .home-page-login {
+        font-size: .8rem;
+    }
+
+    .home-page-check-text {
+        font-size: .9rem;
+    }
+
+    #home-page-circle h4 {
+        font-size: .7rem;
+        padding: 15px 0;
+        height: 70px;
+        width: 70px;
+        margin-left: 10px;
+    }
+
+    .entry-option-headings {
+        font-size: 1.2rem;
+    }
+
+    #comment_text {
+        width: 250px;
+    }
+
+    .user-delete-button {
+        font-size: .5rem;
+    }
+}
+
