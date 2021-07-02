@@ -36,3 +36,23 @@ $('.score-percentage').each(function() {
         $(this).addClass( "low" );
     }
 }); 
+
+/* The below function applies the correct class to the score of the user for todays entry.
+Logic and code sourced from: https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page/21727518 */
+$('.result-container').each(function() {
+    // grab the result the user got
+    let userScore = $(".inner-container p");
+    // get rid of the percent sign
+    let splitScore = userScore.text().split("%")
+    // convert the score to an integer
+    let actualScore = parseInt(splitScore[0])
+    
+    // apply appropriate classes depending on the score
+    if (actualScore >=70) {
+        $(this).addClass( "recovered" );
+    } else if (actualScore >= 50) {
+        $(this).addClass( "moderate" );
+    } else {
+        $(this).addClass( "low" );
+    }
+});
