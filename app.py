@@ -186,6 +186,33 @@ def password_update():
     return render_template("pw_change.html")
 
 
+# Route for the user to delete their entry for the day
+@app.route("/delete_entry/<username>")
+def delete_entry(username):
+    # find the users username
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    # if the user is in session
+    if session["user"]:
+        # find that user's latest entry
+        latest_entry_delete = mongo.db.entries.find({"created_by": username}).sort(username, -1)  
+        latest_delete = list(latest_entry_delete)
+        last_entry_list = latest_delete[-1]
+        last_entry_list_final = list(last_entry_list.items())
+        # Below and above code to grab the _id of the users latest entry
+        final_delete = last_entry_list_final[1][1]
+        delete_id = last_entry_list_final[0][1]
+    
+        # remove this entry from the database
+        mongo.db.entries.remove({"_id": delete_id})
+        flash("Entry Successfully Deleted!")
+        return redirect(url_for("profile", username=username))
+
+    else:
+        abort(404)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
