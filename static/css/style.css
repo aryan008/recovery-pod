@@ -341,7 +341,6 @@ footer {
 @media only screen and (max-width:1300px) {
     #home-page-circle {
         height: 170px;
-        
     }
 
     #home-page-circle h4 {
@@ -357,8 +356,38 @@ footer {
         height: 18rem;
     }
 
-
     .attribute-importance {
         font-size: .9rem;
+    }
+}
+
+@media only screen and (max-width:1135px) {
+    #home-page-circle {
+        height: 130px;
+        margin: 70px 0;
+    }
+
+    #home-page-circle h4 {
+        font-size: 1rem;
+    }    
+
+    .right-div {
+        margin-left: -5px;
+    }
+
+    .left-div li, .right-div li {
+        height: 80px;
+        width: 80px;
+        padding: 25px 5px;
+        font-size: .8rem;
+    }
+
+    .featurette-image {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .attribute-importance,.login-div, .create-account-div {
+        font-size: .8rem;
     }
 }
