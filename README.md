@@ -430,3 +430,27 @@ User Goal | Feature(s)/ Content in response | Goal Met?
 (4)|	Noted above – JavaScript/Python features noted below.|	Yes
 (5)|	Noted above.|	Yes
 (6)|	Administrator access to manage profiles on the database present on admin login. A safety feature is added to not show the “delete account” button to the admin, in case they accidentally delete their account.|	Yes
+
+## Information architecture
+
+### How CSS created an experience
+#### Responsive styling
+
+CSS and media queries were used in the style.css file to make a responsive web application for all screen sizes. This has been tested in the testing section below as part of responsive testing. The following media query sizes were used:
+*	max-width:1037px
+*	max-width:796px
+*	max-width:562px
+*	max-width:460px
+*	max-width:400px
+
+_Note that as part of response testing in the testing section below, the above CSS media rules passed all visual review by the developer._
+
+#### Hover effects
+CSS was used to add a cursor pointer to further engage the site user into clicking the buttons presented.
+
+#### Button effects
+CSS was used to display buttons accordingly with site users in mind.
+*	Blue button – search
+*	Red button – reset/delete (with the exception of a site visitor “Create account” button for visual hierarchy purposes)
+*	Green button – Log in/Create account/ Post entry/ Edit entry
+
