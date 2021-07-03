@@ -639,3 +639,49 @@ In terms of the above and the related colourings on the site, test #4 below prov
 This colouring scheme will apply to both the user’s entry for the day and all entries as per that specific page.
 Please see the app.py in the code for further information of the form entry and it’s calculation for each user, including KeyError/IndexError checks and edit/delete entries.
 
+### Python logic - Brief
+Note that the Python code is fully documented in the app.py comments section. Below is just a brief outline of each of the Python functions/@app.routes/logic per the file. Mongo DB requests are not discussed in this section.
+
+(1)	File imports – documented in the credits section of this ReadMe file, which display the link to all imported libraries and their use in this project
+
+(2)	Attribute dictionaries – As noted in the Metric Scoring section above, these act as the constant matrices for scoring the user form submissions
+
+(3)	/get_recovery @app.route – rendering of the “Home” page along with the attributes. If a user is not logged in, account creation/login buttons are present and displayed to the user to redirect them to this page
+
+(4)	/create_account @app.route – rendering of the “Create account” page. If the method is “POST” on account creation, first the username is checked to see if it exists already. If not, a password is created and checked to meet the password criteria. If successful, the user is redirected to their profile page with a welcome message.
+
+(5)	/login @app.route – rendering of the “Login” page. If the user correctly logs in, they are redirected to their profile page. If not, a message displays that either the username or password is incorrect.
+
+(6)	/profile @app.route – rendering of the “Profile” page for that user. If the user is “in session”, the get_result() function for that user is called on. Date difference is also calculated for this html page.
+
+(7)	/delete_user_user @app.route - If the user is “in session”, the clicking of the button on the profile page of the user deletes the account and all of the account entries from the Mongo DB collections. Note that an “onclick” event listener occurs for the user to confirm this action before deletion.
+
+(8)	/password_update @app.route – rendering of the “password_change” page for that user. If the request method is “POST”, the user will be promoted to enter their existing password and update appropriately before inserting into the Mongo DB collection for new password storage for that user.
+
+(9)	/delete_entry @app.route - If the user is “in session”, this function will remove the entry the user has made today from the Mongo DB collection where it is stored based on the ID. Note that an “onclick” event listener occurs for the user to confirm this action before deletion.
+
+(10)	/edit_entry @app.route - If the user is “in session”, the function will find today’s entry for that user and redirect them to the form to allow for edits and resubmission. If the method is “POST”, the get_result() function for that user is called on and their score is recalculated. The entry they previously made is then updated with the new score on Mongo DB and they are redirected to their profile to see the new score.
+
+(11)	/logout @app.route – user is removed from the session cookie and they are redirected back to the login page
+
+(12)	/about @app.route – The JSON data is loaded to render the “about.html” page
+
+(13)	/new_entry @app.route – Firstly, Python will get the last entered submission by the user if it is available, and if this was in the past it will “Try” and calculate the user’s score via the get_result() for that user. If this Try action is appropriate, the user is redirected to create today’s entry (“New_entry.html) and once the form is submitted via a post action, the entry is stored in Mongo DB and the user is redirected to their profile to view their result. Due to a bug in this lookup of prior submissions, and “except IndexError” is added that essentially means if the user has no entries, do not try and find the last entry but just redirect the user to the “New_entry.html” to create their first entry.
+
+(14)	/all_entries @app.route - If the user is “in session”, return a reversed list of all the entries for the user to view in the “all_entries.html”.
+
+(15)	/search_entries @app.route – allows the user to query all the entries ever posted on the site by username
+
+(16)	/manage_users @app.route - If the user is “in session” and is the administrator, return the “manage_users.html” page and display all the users on the site to the administrator
+
+(17)	 /search_users @app.route - If the user is “in session” and is the administrator, allows the administrator to query all the users on the site by username
+
+(18)	/delete_user @app.route - If the user is “in session” and is the administrator, the clicking of the button beside a particular user deletes the account and all of the account entries from the Mongo DB collections. Note that an “onclick” event listener occurs for the user to confirm this action before deletion.
+
+(19)	Function get_date(username): The function will “Try” to get the user’s latest entry date and return it. If an IndexError occurs, today’s date is returned from the function
+
+(20)	Function get_result(username): Python will “Try” to get the latest entry of that user, and using list/dictionary manipulation, get the attributes selected from that user on the entry submission. A total counter is created, and each attribute option selected by the user on their entry form is scored along with its dictionary counterpart score. The total is then returned. If an IndexError occurs, a narrative is returned which in turn feeds the html page it’s related to.
+
+(21)	404 & 500 error handling pages are created to render their respective html pages.
+
+
