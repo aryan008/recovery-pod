@@ -454,3 +454,23 @@ CSS was used to display buttons accordingly with site users in mind.
 *	Red button – reset/delete (with the exception of a site visitor “Create account” button for visual hierarchy purposes)
 *	Green button – Log in/Create account/ Post entry/ Edit entry
 
+### How JS created an experience
+The JavaScript code created by the site designer is contained within the below JavaScript Code Library files. Note that the key features provided to the user are detailed below where appropriate as an actual feature, not just JS logic.
+
+JavaScript Library – LINK
+See the attached [link](testing_results.md) for the screenshot results of JSHint on the below Javascript code. This is also noted in the testing section of this README file.
+
+#### Feature 1 – Active Class
+Ensuring that the navbar updates to an underlining “Active” class when the site user/visitor/administrator is on a particular page. This will underline the navbar “page” that the user is on, and when the user changes the page, it will automatically remove the class and reapply to the current window location href.
+
+#### Feature 2 – Recovery score all users
+This JS feature will look in all the entries that users have created and apply styling to them depending on their score. If the user’s score is greater than or equal to 70, the class of “recovered” is applied. If the user’s score is greater than or equal to 50, the class of “moderate” is applied. Below this the class of “low” is applied.
+
+#### Feature 3 – Recovery score current entry of user
+This JS feature will look at today’s entry submitted by the user and apply styling to the outside circle depending on the score calculated. If the user’s score is greater than or equal to 70, the class of “recovered” is applied. If the user’s score is greater than or equal to 50, the class of “moderate” is applied. Below this the class of “low” is applied.
+
+#### Feature 4 – Password reset check
+This JS feature checks that the password reset feature works appropriately. If the new and confirm passwords do not match each other, an error is presented to the user explaining what has happened.
+
+Each individual feature has been fully documented adhering to the following JSDoc framework.
+
