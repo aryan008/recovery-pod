@@ -787,4 +787,76 @@ No fixes from the above test were necessary on review of the results.
 
 No fixes from the above test were necessary on review of the results.
 
+### Testing User Stories from User Experience (UX) Section
+
+#### First-Time Visitor Goals
+
+*Note that the below user story screenshots are inserted where as to not overlap. All user story goals have been met.*
+
+As a first-time visitor of the site, I want:
+
+1.	_My impression of the site to be a positive experience_
+*	Colour/Font/Layout/Scoring structure. 
+*	Responsive button elements and appropriate redirects/CRUD messages. 
+*	Clear call to action on user progression from site landing to entry submission.
+USER STORY SCREENSHOT
+
+2.	_To understand the main purpose of the site_
+*	Displayed on the landing “home” page
+USER STORY SCREENSHOT
+
+3.	_To provide relevant content related to athlete recovery and the main metrics of score calculation_
+*	Content on the “home”/ “about” page related to user recovery and appropriate narration. 
+*	Main attributes and their importance listed on both pages
+USER STORY SCREENSHOT
+
+4.	_A clear and unambiguous layout, including a clear recovery score after my form submission_
+*	Colour/Font/Layout/Scoring structure. 
+*	On form submission for the day, redirect to user profile and large circle showing today’s result with appropriate colouring scheme.
+USER STORY SCREENSHOT
+
+5.	_CRUD functionality upon account/entry creation_
+*	Users can create an entry, edit their entry, delete their entry, read their entry. 
+*	Delete account/ password edit feature also available.
+USER STORY SCREENSHOT
+
+6.	_A quick “create account” feature on landing on the site_
+*	Site landing page has (once user not logged in) buttons to redirect to login/ create an account
+USER STORY SCREENSHOT
+
+7.	_An instant feedback loop from form submission to the recovery score of the day_
+*	Flash message present that today’s entry has been made after form submission followed by an immediate redirect to user profile to view their score.
+USER STORY SCREENSHOT
+
+8.	_Easy navigation of the site_
+*	Navbar present at the top of each page. 
+*	Use of JavaScript to apply an “active” class to show the user what page they’re on. 
+*	Registered/logged in users see the full suite of pages available on the site. 
+*	404 and 500 error handing applied for any issues with the site where the user is redirected back to the site should these errors occur. 
+*	User submission navigation prompts are present whether the user has/ has not submitted today’s score.
+USER STORY SCREENSHOT
+
+9.	_Built-in safety protocols – single entries, user authentication, appropriate redirects_
+*	User authentication used on login/ create an account where the username is checked for a username of that name in the database. 
+*	Passwords must match a specified format. 
+*	Flash error messages are displayed on both points above if either show as an error. 
+*	Double entry attempts by the user on the same day are prevented via a redirect back to today’s score and profile, prompting the user to use the designated buttons to interact with their entry.
+USER STORY SCREENSHOT
+
+10.	_The ability to edit/delete my entry for the day_
+*	As part of CRUD functionality, present on the profile of the user
+USER STORY SCREENSHOT
+
+11.	_The ability to delete my account_
+*	As part of CRUD functionality, present on the profile of the user
+USER STORY SCREENSHOT
+
+12.	_To view the recovery score of the day to clearly see how recovered I am_
+*	Available on the user’s profile page should a submission be made on the day. 
+*	If the user has yet to make an entry, narrative appears on the profile page that they have not made today’s entry yet and should make that entry now.
+USER STORY SCREENSHOT
+
+13.	_The colours, layout and feel of the site to be of an athlete nature as part of cultural appropriation_
+*	Noted as part of the visual hierarchy section above.
+USER STORY SCREENSHOT
 
