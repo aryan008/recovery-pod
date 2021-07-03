@@ -474,3 +474,19 @@ This JS feature checks that the password reset feature works appropriately. If t
 
 Each individual feature has been fully documented adhering to the following JSDoc framework.
 
+### How Python created an experience
+Python, along with the libraries noted below, create an experience for the user.
+
+(1)	Use of Jinja templating language. The use of the Jinja templating language allows the site to become of the same structure and hierarchy. On design, I created a “base.html” page which acts as the springboard for all other pages. Fonts/Structure/Colouring/Navbar all act as a platform which the descendent pages all pull from
+(2)	Use of Flash messages. Flash messages are used throughout the site upon user interaction:
+-	Profile page name
+-	Account creation messages
+-	Password change messages
+-	Form recovery entry CRUD messages
+-	Account deletion messages
+(3)	Use of Mongo DB and it’s interaction. As per the Mongo DB Database Structure section below, data is stored and pulled from Mongo DB throughout the site across 4 collections. Indexes are created on two collections in order to allow the users to search by username. Database management is integral to the CRUD functionality of the site and as per the testing section below, all CRUD functionality has been tested with Mongo DB where the appropriate interface is present for the user.
+(4)	Display of JSON information. The “about” page displays information on each of the eight attributes, along with further reading, information text, font awesome icons, image sources and alt tags. Python allows this information to be read from the JSON file and present visually to the site visitor/user.
+(5)	Security. Python’s Werkzeug library allows the user to create a hashed password on site creation and consequently change their password should they wish.
+(6)	Error handing. 404 & 500 error handling templates have been managed and monitored through the site, allowing the user to safely navigate back towards the site should these errors occur
+(7)	Score calculation – see the Metric Scoring section below
+
