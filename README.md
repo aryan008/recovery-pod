@@ -564,3 +564,59 @@ Account|Yes|No|No
 Individual entry|Yes|Yes|No
 Manage users|No|Yes|No
 
+### Mongo DB Database Structure
+The database used for this project is MongoDB. The main database contains four collections.
+*	Attributes
+*	Entries
+*	Recovery
+*	Users
+Throughout the Python app.py file, various Mongo DB requests are made to get the appropriate information from the database and rendered to their appropriate html pages.
+
+#### Attributes
+This collection contains the eight attribute names upon which the site calculates scores on user submission.
+As per below, this collection contains the following structure for the eight attributes:
+* __id: ObjectId
+* attribute_name: String
+
+#### Users
+This collection stores the usernames and passwords of all site members who create an account.
+As per below, this collection contains the following structure for each user:
+* __id: ObjectId
+* username: String
+* password: String
+
+Note that the password is hashed as using the werkzeug.security --> generate_password_hash/check_password_hash libraries in Python
+
+#### Recovery
+This collection contains the eight attribute names/timeframes/narrative and three options for each on the user entry form, upon which the site calculates scores on user submission.
+As per below, this collection contains the following structure for the eight attributes:
+* __id: ObjectId
+* timeframe: String
+* attribute_name: String
+* narrative: String
+* option_one: String
+* option_two: String
+* option_three: String
+
+#### Entries
+This collection stores the entries made by the users on today’s recovery score calculation on form submission.
+As per below, this collection contains the following structure for each user submission:
+* __id: ObjectId
+* Option_choice: Array
+* created_by: String
+* user_chosen_date: String
+* submission_date: String
+* comment_text: String
+* name: ObjectId
+* score: Int32
+
+#### Mongo DB – Search Functionality
+In both the “All entries” and “Manage Users” page, an index was created in Mongo DB to facilitate site users to search.
+
+##### Users collection
+An index was created on the username, allowing the site administrator to search by Username.
+
+##### Entries collection
+An index was created on the created_by, allowing the site users to search by Username.
+
+
