@@ -264,3 +264,13 @@ Hence, I want a site where I can:
 7.	Change my password/delete my account
 8.	Login/Logout
 
+#### Wireframes
+* Desktop/tablet wireframe - [attached](assets/rm_files/wireframe-desktop.pdf)
+* Mobile wireframe - [attached](assets/rm_files/wireframe-mobile.pdf)
+
+#### Typography
+Lato is used as the main font on the site, as imported through Google Fonts. Sans-serif is used as the fallback font. According to an article on [perpetual media group](http://www.perpetualmediagroup.ca/tenbestfontsforprintandweb/):
+_“The semi-rounded details of the letters give Lato a feeling of warmth, while the strong structure provides stability and seriousness.”_
+
+Further, in this [blog post](https://www.justinmind.com/blog/best-google-web-fonts-website/), Lato is ranked as #1 on the “30 best Google Fonts for your website”. It is known that the designer of this font, Lukasz Dziedzic, _“created Lato to work transparently in body text and also to stand out individually when used in larger-sized titles”_.
+With these descriptions in mind, Lato is used for the site design/accompanying text.
