@@ -328,3 +328,54 @@ The following characteristics per the article are manipulated (__article narrati
 *	__Proximity – Closely placed elements seem related.__ _Content is grouped based on spacing for user readability sectioning. The grouping of the form choices is close as these are the options for user submission, before making way to the singular “Post entry” button. The “Edit entry”/”Delete entry” are grouped beside the user score once they post their form entry, suggesting to the user that these buttons interact with the form they just submitted._
 *	__Whitespace – More space around elements draws the eye towards them.__ _Spacing is used effectively according to the hub needs of the product goals._
 *	__Texture and Style – Richer textures stand out over flat ones.__ _As noted in the typography section._
+
+#### Features implemented
+##### Home Page
+*	The site landing/welcoming page welcomes the user to the Recovery Pod, demonstrating that athlete recovery is the outcome of the site
+*	The navigation displays a “call to action” for the user to click to create an account/login if they haven’t previously. There is a clear state change through a page redirect when one of these buttons is clicked
+*	The attributes that are measured are presented visually through a “wheel effect” and coloured appropriately to pop to the user
+*	The page also displays what the site aims to achieve for the user
+
+##### About Page
+*	For each attribute, the attribute is named, a coloured font awesome icon is displayed as well as narrative surrounding its choice as an attribute
+*	An external link is present for the user to click on to read more about the choice and importance of the attribute
+
+##### Login/Create Account page
+*	The user can create an account through a username and password. A prompt is displayed to the user for the password and that the password must be a certain criterion for the password to be accepted to the database – 5 to 15 characters containing only letters and numbers. A user error occurs if the password is not in the requested format.
+*	Similarly, the username must be unique for the account to be created and a flash message will appear to the user if that username has already been taken
+*	On the login side, the username and password must match the account created details for the user to be logged in. If either do not match, the flash message that appears to the user is that “Either the username or password” do not match in order to prevent brute force entry to the site.
+
+##### Logout/Settings page
+*	On clicking the logout page, the user is logged out of the site and redirected to the login page. The navbar displays the original “non-user” navbar links at the top
+*	On the settings page, the user can reset their password. Again, the new user password must match the requested format, with a similar error message if this does not correctly happen. 
+
+##### All entries page
+*	Once a user is logged in, they can see all the entries created on the site
+*	A search bar here allows the user to search by username, along with a reset button to clear the “searched” username and show all entries yet again
+
+##### New entry page
+*	If the user does not have an entry for today, they are prompted to select today’s date and fill out the dropdowns for each attribute
+*	A comments section provided at the bottom of the form allow the user to post any comments they feel like inputting for the day – e.g. must make more of an effort to stretch after my gym session
+*	Upon form submission, the user is redirected back to their profile to view their score for the day
+
+##### Manage profile page
+*	After the entry, the resulting score is presented to the user in a coloured circle that is visually large to zone in on their recovery score along with related green/yellow/red colouring
+*	Present in this circle are the “Edit entry”/” Delete entry” buttons, allowing the user to perform these actions
+*	A narrative is present under the score to tell the user how well recovered they are
+*	If the user tries to click on the “New Entry” link in the navbar after todays submission was made, the user is immediately redirected back to the manage profile page and a flash message pops up indicating that today’s entry was already made. This reinforces that should the user want to change this entry; they must do so in the afore mentioned buttons in the circle containing todays score
+*	If no entry has been made by the user today, obviously the circle containing the score will not be present on the user’s profile, and they are prompted to go to the new entry link in the navbar to create todays entry
+*	Just above the footer at the bottom of the page, the user has the option to entirely delete their account. This will remove their username/password from the database along with all the entries they have ever made on the site. Note that an “onclick” event listener occurs for the user to confirm this action before deletion.
+Manage users page (Admin only)
+*	Once the administrator is logged in, the navbar will update to allow the administrator to view all profiles on the site
+*	Should the admin wish to delete, a “delete user” button beside the username will permanently delete that user from the database, including all their previous entries. Note that an “onclick” event listener occurs for the user to confirm this action before deletion.
+*	A search bar at the top will allow the admin to search for a user, similar to the “all entries” page with the search function previously mentioned.
+
+##### Colours & Fonts
+*	Background colour is set using a dark style as noted in the colour section, displaying a gamified approach feel to the user
+*	Font colour is set in contrast to the background. This gives the effect of user-friendly-readability and gives the “pop” sensation of text overlapping the dark background
+*	Lato is used as the playful text of choice for the site, providing a sense of warmth to the user, while the strong structure provides stability and seriousness.
+*	The recovery green/yellow/red recovery scores throughout the site adhere to human nature – green is good, yellow is moderate, and red is bad
+
+##### Layout
+*	The site’s page is structured visually (font/colouring/areas/form) consistently throughout after each navigation choice by the user, creating a common theme for the site along with Jinja templating. The hierarchy presented tells the user extremely quickly where to look on a page, where to click and how to navigate their profile.
+
