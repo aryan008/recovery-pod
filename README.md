@@ -162,3 +162,37 @@ The following are the attributes measured by the site:
 
 The above attributes are present in a “columned” format on the home page of the site, allowing site visitors to see them as the metrics very quickly. On the about page of the site, each of these attributes are broken down further which allow the site user to quickly see narrative of their importance, including a link for further information should the user wish to read more.
 From my background in strength & conditioning, these attributes (whilst they are not the exhaustive full list) represent the key list of measurements that many of the top athlete’s around the world measure daily in terms of their recovery. For further information on how the calculation is performed, please see the Information architecture -> Metric scoring section of this ReadMe file.
+
+## User Experience (UX)
+### _The 5 planes of User Experience – Decisions and Reasons_
+#### Strategy Plane
+
+Question |	Response for site design
+-------- | ---------
+Is the content culturally appropriate? |	Design will be simplistic in terms of UX and is based on leading athlete load monitoring sites– Dark background and light “pop” information that allow athlete’s to visually see scoring very quickly
+Is the content relevant? |	Acting as an athlete hub, only relevant “Recovery” content will be displayed
+Can we provide content in an intuitive way? |	The site will have a series of prompts/redirects/buttons and, using Python and JavaScript, will feel interactive to the site user
+Is the technology appropriate? |	Since Recovery Pod is essentially a rules-based scoring system with CRUD functionality, Python is the primary source of technology for the site back-end. A combination of CSS and JavaScript will be used for applicable user experience on the front-end
+Who is my target audience? |	Athlete’s/general fitness enthusiasts who want to see how recovered they are
+Product considerations |	No overload of content/imagery on the site as per appropriation. Recovery Pod is a database-driven CRUD site and hence the content should reflect that. Clear feedback loops from user account creation/CRUD usage/entry creation must be present. Navigation/layout must be easy across all devices for the users
+
+##### Strategy feasibility scoping
+Opportunity |	Importance |	Feasibility
+-------- | --------- | -----------
+Ability to see all entries and search by username | 4 | 5
+CRUD functionality on user entry for the day | 5 | 5
+Seamlessly move the page when the user “clicks” the button | 5 | 5
+Feedback loops on CRUD Functionality | 5 | 5
+Feedback loops on form submission | 5 | 5
+Daily email reminder to submit an entry | 4 | 2
+Instructions on how create an account | 4 | 5
+Attributes importance and their sources | 4 | 4
+Further inputs for the user to manage – heart rate/ HRV | 3 | 2
+Password changing | 5 | 5
+Machine learning on user submission – e.g. when you do X, your recovery moves +/-% | 3 | 1
+Delete account | 5 | 5
+Weekly/monthly recovery score charts/suggestions | 4 | 2
+Administrator functionality to manage user profiles | 5 | 5
+Pagination on all entries | 3 | 2
+User error handling – 404/500 errors, entry duplication safety measures, appropriate redirects on user interaction | 5 | 5
+
