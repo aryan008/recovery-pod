@@ -869,3 +869,57 @@ As a returning/frequent visitor of the site, I want:
 2.	_To explore the more information on the attributes that are measured_
 *	External links present on the “About” page
 
+#### Known Bugs
+There are two known bugs in the site:
+*	When the user has “Edit entry” button on their day’s entry, the “Active” class is not reapplied to the “New Entry” link in the Navbar.
+*	JSON file – Property python.linting.pylintEnabled is not allowed
+
+Despite these known bugs, in the interest of time I will have to leave them in the site even though I would prefer to get them fixed.
+
+## Deployment
+
+### Process of deployment
+This site is deployed on Heroku. Heroku is a free online hosting service for applications using multiple languages including Python. For this reason, it was chosen to host this project. To deploy this app on Heroku please follow the steps outlined below:
+
+*Heroku*
+1.	Navigate to the repository for this project ms3-crew-dictionary and click on the green button to open the menu
+2.	You can either download the zip file and extract it into your local directory or copy the link to the repository and clone it in the command line
+3.	Create a new repository in Github and push this project into the new repository.
+4.	Log in to Heroku if you have an account or if you do not have an account, create a new account.
+5.	when in the Heroku dashboard, click on the "New" button and then select "Create new app"
+6.	On the next screen enter an app name (must be unique) and select the region closest to you.
+7.	In the deploy section, click on "Connect to GitHub"
+8.	Select your Github user account and search for the repository that you want to deploy.
+9.	If you want, you can enable Automatic Deployment. This will build your application each time you push any changes to GitHub.
+10.	Navigate to settings and select "Reveal Config Vars. Here you will enter the configuration keys and values from your env.py file. They should look similar to this:
+
+IP: 0.0.0.0
+PORT: 5000
+MONGO_DBNAME: [name of your database]
+MONGO_URI: mongodb://<dbuser>:<dbpassword>@ds225442.mlab.com:25442/<dbname>
+SECRET_KEY: [any string of characters. the longer the better]
+
+11.	Now go back to the "Deploy" tab and click on "Deploy Branch"
+12.	The website should be deployed on https://[your_app_name].herokuapp.com/
+
+*Local Deployment*
+1.	Create a development project folder and navigate to it cd /[folder path]
+2.	Initialise Git git init
+3.	Clone the project repository into your local development folder git clone https://github.com/bowets/ms3-crew-dictionary.git
+4.	Install Python 3
+5.	Install Pip
+6.	Create a virtual environment for your local project
+7.	Install Flask
+8.	Install PyMongo
+9.	Install the packages in the requirements.txt file
+10.	Create an env.py file with the following parameters:
+IP: 0.0.0.0
+PORT: 5000
+MONGO_DBNAME: [name of your database]
+MONGO_URI: mongodb://<dbuser>:<dbpassword>@ds225442.mlab.com:25442/<dbname>
+SECRET_KEY: [any string of characters. the longer the better]
+The project already contains a .gitignore file which contains env.py 
+11. Run the project python app.py
+
+
+
