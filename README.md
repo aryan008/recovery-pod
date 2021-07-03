@@ -148,3 +148,17 @@ As a first-time visitor of the site, I want:
 1.	CRUD functionality on my profile
 2.	To explore the more information on the attributes that are measured
 
+
+## Attributes measured and their importance
+The following are the attributes measured by the site:
+1.	Cold therapy
+2.	Nutrition
+3.	Training
+4.	Sleep
+5.	Stretch
+6.	SMR (Self myofascial release)
+7.	Feeling
+8.	Hydration
+
+The above attributes are present in a “columned” format on the home page of the site, allowing site visitors to see them as the metrics very quickly. On the about page of the site, each of these attributes are broken down further which allow the site user to quickly see narrative of their importance, including a link for further information should the user wish to read more.
+From my background in strength & conditioning, these attributes (whilst they are not the exhaustive full list) represent the key list of measurements that many of the top athlete’s around the world measure daily in terms of their recovery. For further information on how the calculation is performed, please see the Information architecture -> Metric scoring section of this ReadMe file.
