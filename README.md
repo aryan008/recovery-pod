@@ -91,3 +91,60 @@ The site is also designed to handle the full suite of user management, as define
   * [Media](#media)
   * [Code](#code)
   * [Acknowledgements](#acknowledgements)
+
+## Site Owner and Product/Business Goals
+As the site owner, the website is to act as a hub for all athletes/users who create an account, allowing them to:
+*	Create an account/login with a password reset/delete account feature
+*	Have a welcome page where the users can view the attributes measured as well as insights as to what they can experience when they create an account
+*	In the welcome page (where the user has not yet created an account), redirect buttons to prompt the user to create an account
+*	View in more detail the attributes measured along with “importance” narrative, referencing an external link which the user can click on to read further details of the attribute importance
+*	View all entries of other athlete’s including the green/yellow/red scoring of such entries. A search bar function to filter by an athlete’s username is also present
+*	A log out function
+*	A settings function where the user can change their password
+*	A “new entry” feature where the site user can input today’s recovery score via a form asking questions across the attributes measured
+*	A “manage profile” function where the user can: see today’s score with appropriate large colouring; edit/delete entry; see the narrative of their score; delete their account if they wish
+
+
+The site is to achieve the following goals:
+1.	The site is presented in an efficient and authentic way so that the users can quickly create an account and log their recovery score
+2.	The information on the site is displayed clearly and contain all the information necessary for the user to understand the purpose of the site and how their recovery score is calculated
+3.	Provide feedback to the users using colouring of green/yellow/red on today’s recovery score
+4.	Is responsive on all device sizes
+5.	Utilize Python/JavaScript to allow seamless user transition throughout the site and their profile
+6.	Creates a positive experience for the user using colour, imagery and layout
+7.	Become a hub for athletes to utilize in determining their recovery metrics
+8.	To display the content in a culturally appropriate attested to the audience it is aimed at
+
+
+## Developer goals
+As the developer, the site is to achieve the following goals:
+1.	Mar the goals of the site owner and user together
+2.	Create a positive experience for both parties using the specifications required by both parties
+3.	Achieve responsive design across all devices
+4.	Utilize the combination of HTML, CSS, JavaScript and Python to enhance the experience of the user and site owner
+5.	Become a hub for athletes to utilize in determining their recovery metrics
+6.	Allow “administrator” access to manage user profiles in full
+
+
+## First-Time Visitor Goals
+As a first-time visitor of the site, I want:
+
+1.	My impression of the site to be a positive experience
+2.	To understand the main purpose of the site
+3.	To provide relevant content related to athlete recovery and the main metrics of score calculation
+4.	A clear and unambiguous layout, including a clear recovery score after my form submission
+5.	CRUD functionality upon account/entry creation
+6.	A quick “create account” feature on landing on the site
+7.	An instant feedback loop from form submission to the recovery score of the day
+8.	Easy navigation of the site
+9.	Built-in safety protocols – single entries, user authentication, appropriate redirects
+10.	The ability to edit/delete my entry for the day
+11.	The ability to delete my account
+12.	To view the recovery score of the day to clearly see how recovered I am
+13.	The colours, layout and feel of the site to be of an athlete nature as part of cultural appropriation
+
+
+## Returning and Frequent Visitor Goals
+1.	CRUD functionality on my profile
+2.	To explore the more information on the attributes that are measured
+
