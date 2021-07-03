@@ -684,4 +684,52 @@ Note that the Python code is fully documented in the app.py comments section. Be
 
 (21)	404 & 500 error handling pages are created to render their respective html pages.
 
+## Technology and Languages used
+
+### Languages
+
+*	[HTML5](https://en.wikipedia.org/wiki/HTML5)
+*	[CSS3](https://en.wikipedia.org/wiki/CSS)
+*	[JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+*	[Python](https://www.python.org/)
+
+### Frameworks, Libraries and Programmes
+
+[jQuery](https://jquery.com/)
+Used as part of JavaScript information architecture.
+
+[GitHub](https://github.com/)
+Used to store projects code upon Git push.
+
+[Git](https://en.wikipedia.org/wiki/Git)
+Used for version control through the Gitpod terminal and the Git add/commit/push action sequence.
+
+[Microsoft Word](https://www.microsoft.com/en-ie/microsoft-365/word)
+Used for designing of the wireframes as I am completing this project on my work laptop with no access to Balsamiq.
+
+[Google fonts](https://fonts.google.com/)
+Used to add the Lato font and related font weights to the CSS style file using the @import url function. To improve site load times, this file is loaded into the head element of the HTML pages and backed up by using sans-serif in CSS.
+
+[Flask](https://flask.palletsprojects.com/en/2.0.x/) - A lightweight WSGI web application framework used for routing and backend of this project.
+
+[Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine)#:~:text=Jinja%20is%20a%20web%20template%20engine%20for%20the%20Python%20programming%20language.&text=Jinja%20is%20similar%20to%20the,as%20well%20as%20source%20code.)
+Template engine used to render web pages and components
+
+[PyMongo](https://pypi.org/project/pymongo/)
+A component imported into Python to allow access and CRUD operations with a Mongo DB database
+
+[Heroku](https://www.heroku.com/about)
+A web hosting service that supports Python applications.
+
+[Mongo DB Atlas](https://www.mongodb.com/)
+Document database to store data using NOSQL for this project
+
+[Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
+A comprehensive WSGI web application library, used for password hashing and security in this project.
+
+[JSON](https://www.json.org/json-en.html)
+An open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs. Used for storing the attribute information per the “About” page in this project
+
+[Datetime](https://docs.python.org/3/library/datetime.html)
+Used for user entry submission logic in this project
 
