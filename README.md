@@ -860,3 +860,12 @@ USER STORY SCREENSHOT
 *	Noted as part of the visual hierarchy section above.
 USER STORY SCREENSHOT
 
+#### Returning and Frequent Visitor Goals
+As a returning/frequent visitor of the site, I want:
+
+1.	_CRUD functionality on my profile_
+*	Available on the individual’s daily entry &	Delete account feature available on the user’s profile
+
+2.	_To explore the more information on the attributes that are measured_
+*	External links present on the “About” page
+
