@@ -196,3 +196,20 @@ Administrator functionality to manage user profiles | 5 | 5
 Pagination on all entries | 3 | 2
 User error handling – 404/500 errors, entry duplication safety measures, appropriate redirects on user interaction | 5 | 5
 
+#### Scope Plane
+What's in? |	What's out?
+-------- | ---------
+Ability to see all entries and search by username | Further inputs for the user to manage – heart rate/ HRV
+CRUD functionality on user entry for the day | Machine learning on user submission – e.g. when you do X, your recovery moves +/-%
+Seamlessly move the page when the user “clicks” the button | Weekly/monthly recovery score charts/suggestions
+Feedback loops on CRUD usage | Daily email reminder to submit an entry
+Feedback loops on CRUD Functionality | Pagination on all entries
+Feedback loops on form submission | Forgot password email reset
+Instructions on how create an account
+Attributes importance and their sources
+Password changing
+Delete account
+Administrator functionality to manage user profiles
+User error handling – 404/500 errors, entry duplication safety measures, appropriate redirects on user interaction
+
+
