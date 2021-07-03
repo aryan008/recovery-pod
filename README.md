@@ -31,7 +31,7 @@ The site is also designed to handle the full suite of user management, as define
 * [Developer goals](#developer-goals)
 * [First Time Visitor Goals](#first-time-visitor-goals)
 * [Returning and Frequent Visitor Goals](#returning-and-frequent-visitor-goals)
-* [Attributes measured and their importance](#basic-rules)
+* [Attributes measured and their importance](#attributes-measured-and-their-importance)
 * [User Experience (UX)](#user-experience-ux)
   * *The 5 planes of User Experience – Decisions and Reasons*
    1.	[Strategy plane](#strategy-plane)
@@ -58,16 +58,15 @@ The site is also designed to handle the full suite of user management, as define
   * [Designer goals](#designer-goals)
 
 * [Information Architecture?](#information-architecture)
-  * [Sections](#sections)
-  * How CSS created an experience
-  *	How JS created an experience
-  *	How Python created an experience
-  *	Site Logic and diagram
-  *	User Types and permissions
-  *	CRUD Functionality
-  *	Mongo DB Database Structure
-  *	Metric scoring
-  *	Python logic - Brief
+  * [How CSS created an experience](#how-css-created-an-experience)
+  *	[How JS created an experience](#how-js-created-an-experience)
+  *	[How Python created an experience](#how-python-created-an-experience)
+  *	[Site Logic and diagram](#site-logic-and-diagram)
+  *	[User Types and permissions](#user-types-and-permissions)
+  *	[CRUD Functionality](#crud-functionality)
+  *	[Mongo DB Database Structure](#mongo-db-database-structure)
+  *	[Metric scoring](#metric-scoring)
+  *	[Python logic - Brief](#python-logic- - -brief)
 
 * [Technology and Languages used](#technology-and-languages-used)
   *	[Languages](#languages)
