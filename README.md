@@ -379,3 +379,14 @@ Manage users page (Admin only)
 ##### Layout
 *	The site’s page is structured visually (font/colouring/areas/form) consistently throughout after each navigation choice by the user, creating a common theme for the site along with Jinja templating. The hierarchy presented tells the user extremely quickly where to look on a page, where to click and how to navigate their profile.
 
+#### Features left to implement
+*	Further inputs for the user to manage – heart rate/ HRV
+*	Machine learning on user submission – e.g. when you do X, your recovery moves +/-%
+*	Forgot your password? Reset feature
+*	Weekly/monthly recovery score charts/suggestions
+*	Daily email reminder to submit an entry
+*	Pagination on all entries and manage users page
+
+
+
+
