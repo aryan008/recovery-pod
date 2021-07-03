@@ -387,6 +387,46 @@ Manage users page (Admin only)
 *	Daily email reminder to submit an entry
 *	Pagination on all entries and manage users page
 
+## Design & UX – How do they come together?
 
+### User goals
 
+User Goal | Feature(s)/ Content in response | Goal Met?
+-------- | --------- | --------
+(1)|	Colour/Font/Layout/Scoring structure. Responsive button elements and appropriate redirects/CRUD messages. Clear call to action on user progression from site landing to entry submission.|	Yes
+(2)|	Displayed on the landing “home” page|	Yes
+(3)|	Content on the “home”/ “about” page related to user recovery and appropriate narration. Main attributes and their importance listed on both pages|	Yes
+(4)|	Colour/Font/Layout/Scoring structure. On form submission for the day, redirect to user profile and large circle showing today’s result with appropriate colouring scheme.|	Yes
+(5)|	Users can create an entry, edit their entry, delete their entry, read their entry. Delete account/ password edit feature also available.|	Yes
+(6)|	Site landing page has (once user not logged in) buttons to redirect to login/ create an account|	Yes
+(7)|	Flash message present that todays entry has been made after form submission followed by an immediate redirect to user profile to view their score.|	Yes
+(8)|	Navbar present at the top of each page. Use of JavaScript to apply an “active” class to show the user what page they’re on. Registered/logged in users see the full suite of pages available on the site. 404 and 500 error handing applied for any issues with the site where the user is redirected back to the site should these errors occur. User submission navigation prompts are present whether the user has/ has not submitted today’s score.|	Yes
+(9)|	User authentication used on login/ create an account where the username is checked for a username of that name in the database. Passwords must match a specified format. Flash error messages are displayed on both points above if either show as an error. Double entry attempts by the user on the same day are prevented via a redirect back to today’s score and profile, prompting the user to use the designated buttons to interact with their entry.|	Yes
+(10)|	As part of CRUD functionality and noted above, this is present|	Yes
+(11)|	Account deletion is present on the user’s profile page through a button|	Yes
+(12)|	Available on the user’s profile page should a submission be made on the day. If the user has yet to make an entry, narrative appears on the profile page that they have not made today’s entry yet and should make that entry now.|	Yes
+(13)|	Noted as part of the visual hierarchy section above.|	Yes
 
+### Site owner goals
+
+User Goal | Feature(s)/ Content in response | Goal Met?
+-------- | --------- | --------
+(a)|	Clear call to action on user progression from site landing to entry submission, indicative through display of CTA buttons on the landing “home” page|	Yes
+(b)|	Attributes and their measurement/importance noted in both the home and about page|	Yes
+(c)|	Utilizing JavaScript to apply green/yellow/red colourings on both the user’s personal score for the day and all the entries made on the site.|	Yes
+(d)|	Responsive design build using media queries in CSS. Tested as part of testing section below.|	Yes
+(e)|	Utilizing of Flask/Jinja/JQuery and appropriate redirects for site progression. See the Information Architecture section below for further details|	Yes
+(f)|	Clear contrast effect between background & foreground text/images, including score colouring application as noted in the outset|	Yes
+(g)|	Allows users to see all athlete entries ever made and pit their scores against others|	Yes
+(h)|	As above point (f)|	Yes
+
+### Designer goals
+
+User Goal | Feature(s)/ Content in response | Goal Met?
+-------- | --------- | --------
+(1)|	Noted above.|	Yes
+(2)|	Noted above.|	Yes
+(3)|	Noted above.|	Yes
+(4)|	Noted above – JavaScript/Python features noted below.|	Yes
+(5)|	Noted above.|	Yes
+(6)|	Administrator access to manage profiles on the database present on admin login. A safety feature is added to not show the “delete account” button to the admin, in case they accidentally delete their account.|	Yes
