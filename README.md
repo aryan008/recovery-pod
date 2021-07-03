@@ -1,45 +1,93 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align = "center">Recovery Pod</h1>
 
-Welcome aryan008,
+View the live project at the following [link]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+![See how the site looks across the devices]()
 
-## Gitpod Reminders
+We are seeing a massive rise in Athlete’s understanding of how recovery plays an impact in areas such as performance, mood regulation and general wellbeing. Applications such as Whoop, Output Sports and Apex Athlete Series have done phenomenally well in the last number of years in areas such as sleep monitoring, load measuring and performance-based metrics. However, the true use of these sites is often stuck behind a massive paywall and require expensive equipment. 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Although most people that are involved in sports performance often view their recovery as “Am I sore?”, this is only one of the key metrics that have been proven to factor into the recovery equation. Hydration, Sleep, Nutrition, etc. play a huge role in determining an Athlete’s readiness and often willingness to train and are often overlooked by the non-elite.
 
-`python3 -m http.server`
+In response to this, I wanted to create a site that allows the user to figure out “How recovered am I today?” through a form submission with multiple questions, allowing them to visually see their recovery score. They can therefore login every day, fill in this form and plan their training accordingly based on how recovered they are.
 
-A blue button should appear to click: *Make Public*,
+The aim of this site is to allow the user of the site to calculate their recovery score. Users will experience:
+*	a welcome/about page where the user can create an account/login and view the metrics that the site determines for their score
+*	Full CRUD (Create/Read/Update/Delete) functionality
+*	a delete account feature
+*	password reset feature
+*	View external sources of information of the attributes measured
+*	Submission of a form which will calculate the user recovery score based on answers to their questions
+*	A managing of their profile, which will include their score for the today, as well as an “edit/delete” entry if any mistake on their entry was made 
+*	A log out section
+*	View the entries of everyone that has an account, including a search bar that users can see all the scores of an entered username
+*	A green/yellow/red recovery colouring scheme that allows high-impact colouring across the site
 
-Another blue button should appear to click: *Open Browser*.
+The site is designed to be responsive and accessible across all device sizes, as defined in the testing section of this ReadMe file.
+The site is also designed to handle the full suite of user management, as defined in the Information architecture of this ReadMe file.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: *Make Public*,
+## Table of Contents
+* [Site Owner and Product/Business Goals](#site-owner-and-productbusiness-goals)
+* [Developer goals](#developer-goals)
+* [First Time Visitor Goals](#first-time-visitor-goals)
+* [Returning and Frequent Visitor Goals](#returning-and-frequent-visitor-goals)
+* [Attributes measured and their importance](#basic-rules)
+* [User Experience (UX)](#user-experience-ux)
+  * *The 5 planes of User Experience – Decisions and Reasons*
+   1.	[Strategy plane](#strategy-plane)
+   2.	[Scope plane](#scope-plane)
+   3.	[Structure plane](#structure-plane)
+   4.	[Skeleton plane](#skeleton-plane)
+   5.	[Surface plane](#surface-plane)
+   
+  *	[Who/ What/ How](#who-what-how)
+  *	[User stories](#user-stories)
 
-Another blue button should appear to click: *Open Browser*.
+* [Design Features](#design-features)
+  1.  [Wireframes](#wireframes)
+  2.	[Typography](#typography)
+  3.	[Colour scheme](#colour-scheme)
+  4.	[Imagery](#imagery)
+  5.	[Visual Hierarchy](#visual-hierarchy)
+  6.	[Features implemented](#features-implemented)
+  7.	[Features left to implement](#features-left-to-implement)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* [Design & UX – How do they come together?](#design--ux--how-do-they-come-together)
+  * [User goals](#user-goals)
+  * [Site owner goals](#site-owner-goals)
+  * [Designer goals](#designer-goals)
 
-## Updates Since The Instructional Video
+* [Information Architecture?](#information-architecture)
+  * [Sections](#sections)
+  * How CSS created an experience
+  *	How JS created an experience
+  *	How Python created an experience
+  *	Site Logic and diagram
+  *	User Types and permissions
+  *	CRUD Functionality
+  *	Mongo DB Database Structure
+  *	Metric scoring
+  *	Python logic - Brief
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* [Technology and Languages used](#technology-and-languages-used)
+  *	[Languages](#languages)
+  *	[Frameworks, Libraries and Programmes](#frameworks-libraries-and-programmes)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+* [Testing](#testing)
+  * [Code validation](#code-validation)
+  * [Accessibility testing](#accessibility-testing)
+  * [Responsive testing](#responsive-testing)
+  * [Manual testing](#manual-testing)
+  * [Further testing](#further-testing)
+  * [Testing user stories from User Experience (UX) section](#testing-user-stories-from-user-experience-ux-section)
+  * [Known bugs](#known-bugs)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* [Deployment](#deployment)
+  * [Process of deployment](#process-of-deployment)
+  * [How to run this project locally](#how-to-run-this-project-locally)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+* [Credits](#credits)
+  * [Content](#content)
+  * [Media](#media)
+  * [Code](#code)
+  * [Acknowledgements](#acknowledgements)
