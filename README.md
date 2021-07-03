@@ -309,3 +309,22 @@ Home page circle/ Font awesome icon colouring:
 * Sleep – rgb(230, 137, 253)
 * Hydration - rgb(0, 166, 243)
 
+#### Imagery
+On the home page, a “columned” effect is added to show the attributes names which are measured on the site.
+Font Awesome is used to display emoticons on the about page, as well as circle images of each attribute as they are listed.
+For the “all entries” page, the green/yellow/red recovery scores are present for each individual user. Similarly, with the user’s entry for the day, the same colouring scheme is applied but on the outside circle which is visually big for user readability and design.
+See the credits section of this ReadMe file for all appropriate accreditation of the imagery used.
+
+#### Visual Hierarchy
+According to the following article on [Visual Hierarchy](https://www.interaction-design.org/literature/topics/visual-hierarchy):
+
+“Visual hierarchy controls the delivery of the experience. If you have a hard time figuring out where to look on a page, it’s more than likely that its layout is missing a clear visual hierarchy.”
+
+The following characteristics per the article are manipulated (__article narrative in bold__, _developer response in italic_):
+* __Size – Users notice larger elements more easily.__ _The CTA buttons to the user are larger than the text elements for the user to visually see where to interact. The recovery score on the manage profile page takes up much of the screen which allows the user to see their result clearly and unambiguously. The “all entries” scores are coordinated to be slightly larger than the text presented in the table._
+* __Colour – Bright colours typically attract more attention than muted ones.__ _The contrast between the dark background and bright text attracts the user the read the text more visibly. Colour classes are added at the score level to visibly display to the user whether they are well recovered, moderately recovered or low recovered. See the testing section of this file for contrast testing._
+* __Contrast – Dramatically contrasted colours are more eye-catching.__ _As noted above._
+* __Repetition – Repeating styles can suggest content is related.__ _The style is repetitive – information for the user follows the same pattern for each page through the use of Jinja templating._
+*	__Proximity – Closely placed elements seem related.__ _Content is grouped based on spacing for user readability sectioning. The grouping of the form choices is close as these are the options for user submission, before making way to the singular “Post entry” button. The “Edit entry”/”Delete entry” are grouped beside the user score once they post their form entry, suggesting to the user that these buttons interact with the form they just submitted._
+*	__Whitespace – More space around elements draws the eye towards them.__ _Spacing is used effectively according to the hub needs of the product goals._
+*	__Texture and Style – Richer textures stand out over flat ones.__ _As noted in the typography section._
