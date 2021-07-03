@@ -534,3 +534,33 @@ User|	Yes|	Yes|	Yes|	Yes – own profile/entry
 Admin|	Yes|	Yes|	Yes|	Yes – other profiles
 
 As seen in the table above, all CRUD functionality is present in the application, however, CRUD operations are restricted to some user types.
+
+#### Create
+Narrative|User|Admin|Visitor
+-------- | --------- | -------- | --------
+Account creation|Yes|Yes|Yes
+Individual entry|Yes|Yes|No
+Password change|Yes|Yes|No
+
+#### Read
+Narrative|User|Admin|Visitor
+-------- | --------- | -------- | --------
+Home/About Page|Yes|Yes|Yes
+All entries|Yes|Yes|No
+User profile|Yes|Yes|No
+User score|Yes|Yes|No
+Manage users|No|Yes|No
+
+#### Update
+Narrative|User|Admin|Visitor
+-------- | --------- | -------- | --------
+Password|Yes|Yes|No
+Individual entry|Yes|Yes|No
+
+#### Delete
+Narrative|User|Admin|Visitor
+-------- | --------- | -------- | --------
+Account|Yes|No|No
+Individual entry|Yes|Yes|No
+Manage users|No|Yes|No
+
