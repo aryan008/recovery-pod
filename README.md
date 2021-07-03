@@ -66,7 +66,7 @@ The site is also designed to handle the full suite of user management, as define
   *	[CRUD Functionality](#crud-functionality)
   *	[Mongo DB Database Structure](#mongo-db-database-structure)
   *	[Metric scoring](#metric-scoring)
-  *	[Python logic - Brief](#python-logic- - -brief)
+  *	[Python logic - Brief](#python-logic-brief)
 
 * [Technology and Languages used](#technology-and-languages-used)
   *	[Languages](#languages)
