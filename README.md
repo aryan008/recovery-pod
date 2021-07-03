@@ -243,3 +243,24 @@ Question |	Response for site design
 What is the visual language? |	Jinja templating as noted above. Colouring as per testing norms, layout is informative, Fonts as per media display standard, images/recovery scores are clear and pop to the user, CTA buttons for site progression, JavaScript for score colouring and “active” page on site.
 What is the economy? |	The most important user/owner elements are easily recognised
 Readability and consistency |	Each site page is familiar to the user in terms of font/styling consistency
+
+### _Who/ What/ How_
+**Who is it for?** Users who want to understand metrics of athlete recovery, see their own recovery scores through form submission and improve their scores over time
+
+**What is it for?** Users who want to recover correctly each day
+
+**How will it achieve this?** Through creating a Recovery Pod site, and through Python/JavaScript/CSS/HTML, allow the user to log their recovery scores and see how recovered they are for the day
+
+### _User Stories_
+Performance is dictated by readiness, and this readiness can be boosted by taking the correct measures throughout the day.
+
+Hence, I want a site where I can:
+1.	Create my own personal account for the Recovery Pod.
+2.	Learn about the attributes of recovery
+3.	Navigate easily
+4.	See if I’m recovered or not
+5.	See other user’s recovery scores
+6.	Perform CRUD functionality on my entry for the day
+7.	Change my password/delete my account
+8.	Login/Logout
+
