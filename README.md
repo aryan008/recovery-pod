@@ -733,3 +733,58 @@ An open standard file format and data interchange format that uses human-readabl
 [Datetime](https://docs.python.org/3/library/datetime.html)
 Used for user entry submission logic in this project
 
+## Testing
+
+### Code validation
+The W3C Markup Validator, W3C CSS Validator, JSHint JavaScript Validator Services, PEP8 online and GTMetrix were used to validate the project to ensure there were no errors in the project.
+See the attached [link](testing_results.md) for the screenshot results of the code validation section.
+
+[W3C Markup Validator](https://validator.w3.org/) - [Results screenshot](assets/rm_files/html-validator.PNG)
+
+No fixes from the above test were necessary on review of the results.
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - [Results screenshot](assets/rm_files/css-validator.PNG)
+
+No fixes from the above test were necessary on review of the results.
+
+### Accessibility Testing
+
+See the attached [link](testing_results.md) for the screenshot results of the Accessibility testing section.
+
+[Google Lighthouse](https://developers.google.com/web/tools/lighthouse) and [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) were used to test the site's accessibility.
+
+See the below to review the screenshots of successful accessibility testing on the site for Google Lighthouse.
+
+* Lighthouse mobile: [link](assets/rm_files/google-lighthouse-mobile.PNG)
+* Lighthouse desktop: [link](assets/rm_files/google-lighthouse-desktop.PNG)
+
+[WAVE](https://developers.google.com/web/tools/lighthouse) Web Accessibility. For the WAVE specific testing live link, click on the [following](https://wave.webaim.org/report#/https://aryan008.github.io/rock-paper-scissors-m2/).
+For the static results, see [here](assets/rm_files/wave-result.PNG).
+
+No known issues were present on either of these accessibility tests.
+
+### Responsive Testing
+The site's repsonsiveness was tested using [Google's Mobile Friendly Tester](https://search.google.com/test/mobile-friendly) and [Responsinator](https://www.responsinator.com/).
+See the attached [link](testing_results.md) for the screenshot results of the Responsive testing section.
+
+See the following [link](assets/rm_files/googlr-mobile-friendly-tester.PNG) to review the screenshot of successful responsive testing of the site for Google's Mobile Friendly Tester.
+See the following [link](https://search.google.com/test/mobile-friendly?id=UYF7jPVjfbJ-Xh_Xuf8E2Q) for the live test of Google's Mobile Friendly Tester.
+
+To review the Responsinator testing, click [here](https://www.responsinator.com/?url=https%3A%2F%2Faryan008.github.io%2Frock-paper-scissors-m2%2F). As part of responsive testing, the site was tested across all device sizes per this link and no issues were found.
+
+[Chrome devtools device mode](https://developers.google.com/web/tools/chrome-devtools/device-mode) was also used to test the site’s responsiveness. Manual testing was also performed via resizing the browser to review for issues at varying browser screen sizes.
+No known issues were present on these responsive tests.
+
+[JSHint JS Validator](https://jshint.com/) - [Results screenshot](assets/rm_files/jshint.PNG)
+
+No fixes from the above test were necessary on review of the results.
+
+[PEP8 Online](http://pep8online.com/) - [Results screenshot](assets/rm_files/jshint.PNG)
+
+No fixes from the above test were necessary on review of the results.
+
+[GTMetrix](https://gtmetrix.com/) - [Results screenshot](assets/rm_files/jshint.PNG)
+
+No fixes from the above test were necessary on review of the results.
+
+
