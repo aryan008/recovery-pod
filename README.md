@@ -512,4 +512,25 @@ If the administrator is logged in, they will have all of the above features but 
 
 See below for a diagram of the site logic.
 
+### User Types and permissions
+There are three types of users that this website is designed for:
 
+#### Visitor
+A visitor is anyone who navigates to this website and can see home & about pages. Visitors can view the attributes, their importance, the about page and they can register for an account/login. The page is fully functional for read only access for visitors.
+
+#### User
+A visitor who registers for an account automatically becomes a "user". Users have the same rights as visitors, plus they have access to a see all the entries ever created, their own profile, creation of today’s score through a form, change their password and log out. Users have full CRUD functionality on their own entries for today, as well as the ability to delete their account and all entries.
+
+#### Admin
+Administrators have all the rights of a user, but they also have the right to manage the profiles of other users. They can delete any user except themselves. This is a security feature so that an administrator doesn't accidentally delete their own account.
+
+### CRUD - Create, Read, Update and Delete
+As part of the milestone project, we must demonstrate that our application can perform CRUD operations.
+
+User type | Create |	Read |	Update |	Delete
+-------- | --------- | -------- | -------- | --------
+Visitor|	No|	Yes|	No|	No|
+User|	Yes|	Yes|	Yes|	Yes – own profile/entry
+Admin|	Yes|	Yes|	Yes|	Yes – other profiles
+
+As seen in the table above, all CRUD functionality is present in the application, however, CRUD operations are restricted to some user types.
