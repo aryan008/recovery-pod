@@ -943,3 +943,26 @@ Training| [Here](https://www.ais.gov.au/position_statements/content/training-loa
 Sleep| [Here](https://www.sleepfoundation.org/physical-activity/athletic-performance-and-sleep)| [Here](https://images.unsplash.com/photo-1529435022610-ccc7cab8499e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80)| Hamza Bounaim
 Feeling| [Here](https://metrifit.com/blog/why-should-you-monitor-your-athletes/)| [Here](https://images.unsplash.com/photo-1519311965067-36d3e5f33d39?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80)| Victor Freitas
 
+#### Font awesome
+Link for font awesome “About” page entries: [Link](https://fontawesome.com/)
+
+#### Favicon
+Favicon creation at: [Link](https://favicon.io/favicon-converter/)
+
+#### Google Fonts
+Link for Google Fonts: [Link](https://fonts.google.com/)
+ 
+### Code
+ 
+* Crisp images on about page: [Link](https://css-tricks.com/almanac/properties/i/image-rendering/)
+* JavaScript window path active class: [Link](https://codepen.io/figarali/pen/araWdP)
+* Python username/login/logout features: From Code Institute Task manager project
+* Python/JSON Attributes help: From Code Institute
+* Bootstrap Navbar: [Link](https://getbootstrap.com/docs/5.0/forms/form-control/)
+* “Are you sure you want to delete?”: [Link](https://stackoverflow.com/questions/9139075/how-to-show-a-confirm-message-before-delete)
+* Password reset check: [Link](https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page/21727518)
+* Python date difference formulae: [Link](https://stackoverflow.com/questions/8419564/difference-between-two-dates-in-python)
+* Python reverse a list: [Link](https://www.programiz.com/python-programming/methods/list/reverse)
+* Mongo DB Index Creation: [Link](https://docs.mongodb.com/manual/indexes/)
+* Support for creating the ReadMe file linked table of content: [here](https://stackoverflow.com/questions/11948245/markdown-to-create-pages-and-table-of-contents) and [here](https://www.setcorrect.com/portfolio/work11/)
+
