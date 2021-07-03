@@ -274,3 +274,38 @@ _“The semi-rounded details of the letters give Lato a feeling of warmth, while
 
 Further, in this [blog post](https://www.justinmind.com/blog/best-google-web-fonts-website/), Lato is ranked as #1 on the “30 best Google Fonts for your website”. It is known that the designer of this font, Lukasz Dziedzic, _“created Lato to work transparently in body text and also to stand out individually when used in larger-sized titles”_.
 With these descriptions in mind, Lato is used for the site design/accompanying text.
+
+#### Colour Scheme
+The main colours used on the site are a shade of black and white:
+* Background: rgb(46, 45, 45) (grey/black)
+* Text colour: rgb(255,255,255) (white)
+The reason for this is to achieve a “pop” effect on the icons and text presented, making them appeal more to the screen reader. 
+
+According to [designwebkit](https://designwebkit.com/design/gaming-website-templates-professional-tips-build-game-website/#:~:text=As%20you%20may%20notice%2C%20most,brown%2C%20grey%2C%20and%20khaki.):
+
+_“Most popular websites use dark colour scheme for their websites to create a mystic and engaging ambiance. The most popular colours for such websites are black, brown, grey, and khaki”._
+
+Further colourings used on the site:
+
+Footer links:
+* Twitter - rgb(6, 179, 209)
+* Facebook - rgb(33, 83, 190)
+* Github - rgb(228, 6, 6)
+
+Recovery scores:
+* Recovered - rgb(15, 145, 15) (Green)
+* Moderate- rgb(216, 216, 39) (Yellow)
+* Low - rgb(190, 16, 16) (Red)
+
+Box shadows: rgba(100, 100, 100, 0.877)
+
+Home page circle/ Font awesome icon colouring:
+* Cold therapy – rgb(84, 194, 245)
+* Stretch – rgb(243, 186, 0)
+* Nutrition - rgb(88, 224, 106)
+* SMR – rgb(233, 132, 107)
+* Training – rgb(255, 244, 93)
+* Feeling – rgb(161, 255, 93)
+* Sleep – rgb(230, 137, 253)
+* Hydration - rgb(0, 166, 243)
+
