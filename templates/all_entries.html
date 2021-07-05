@@ -11,12 +11,15 @@
                     <label for="query_entry" class="me-2">
                         Search Users
                     </label>
-                    <input type="text" name="query_entry" id="query_entry" class="validate search-bar" aria-label="input field to search users" required>
+                    <input type="text" name="query_entry" id="query_entry" class="validate search-bar"
+                        aria-label="input field to search users" required>
                 </div>
                 <br>
                 <div>
-                    <a href="{{ url_for('all_entries') }}" class="btn btn-danger btn-sm reset-button" aria-label="reset button">Reset</a>
-                    <button type="submit" class="btn btn-info btn-sm search-button" aria-label="search button">Search</button>
+                    <a href="{{ url_for('all_entries') }}" class="btn btn-danger btn-sm reset-button"
+                        aria-label="reset button">Reset</a>
+                    <button type="submit" class="btn btn-info btn-sm search-button"
+                        aria-label="search button">Search</button>
                 </div>
             </form>
             <br>
@@ -33,7 +36,7 @@
                 <tbody>
                     <!--for loop to pull in all the entries in a table-->
                     {% for entry in full_entries_list %}
-                    <tr class = "table-entries">
+                    <tr class="table-entries">
                         <td>{{ entry.created_by }}</td>
                         <td>{{ entry.user_chosen_date }}</td>
                         <td class="score-percentage">{{ entry.score }}</td>

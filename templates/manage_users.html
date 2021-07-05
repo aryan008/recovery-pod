@@ -11,13 +11,16 @@
                     <label for="query_user" class="me-2">
                         Search Users
                     </label>
-                    <input type="text" name="query_user" id="query_user" class="validate search-bar" aria-label="search users text field" required>
+                    <input type="text" name="query_user" id="query_user" class="validate search-bar"
+                        aria-label="search users text field" required>
                 </div>
                 <br>
                 <div>
                     <!--reset and search redirect/button respectively-->
-                    <a href="{{ url_for('manage_users') }}" class="btn btn-danger btn-sm reset-button" aria-label="reset page button">Reset</a>
-                    <button type="submit" class="btn btn-info btn-sm search-button" aria-label="search button">Search</button>
+                    <a href="{{ url_for('manage_users') }}" class="btn btn-danger btn-sm reset-button"
+                        aria-label="reset page button">Reset</a>
+                    <button type="submit" class="btn btn-info btn-sm search-button"
+                        aria-label="search button">Search</button>
                 </div>
             </form>
             <br>

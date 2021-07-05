@@ -10,14 +10,17 @@
         <h4 class="text-center mt-4 home-page-check-text">Create an account to get Started!
             <span>
                 <!--account creation button since not in session-->
-                <a href="{{ url_for('create_account') }}" class="mt-1 btn btn-danger btn-outline-light home-page-create-account" aria-label="create account button">Create Account</a>
+                <a href="{{ url_for('create_account') }}"
+                    class="mt-1 btn btn-danger btn-outline-light home-page-create-account"
+                    aria-label="create account button">Create Account</a>
             </span>
         </h4>
         <br>
         <h4 class="text-center home-page-check-text">Already have an account? Login!
             <span>
                 <!--login button since not in session-->
-                <a href="{{ url_for('login') }}" class="mt-1 btn btn-success btn-outline-light home-page-login" aria-label="login button">Log in</a>
+                <a href="{{ url_for('login') }}" class="mt-1 btn btn-success btn-outline-light home-page-login"
+                    aria-label="login button">Log in</a>
             </span>
         </h4>
         <br>
@@ -29,9 +32,12 @@
             <!--narrative about site-->
             <h4>How do we calculate Recovery?</h4>
             <p>Here at Recovery Pod we aim to assess your recovery and readiness to train!</p>
-            <p class = "home-page-check-text">By filling out your recovery form on a daily basis, we assess the below attributes from your personal
+            <p class="home-page-check-text">By filling out your recovery form on a daily basis, we assess the below
+                attributes from your personal
                 responses to give you a score out of 100.</p>
-            <p class = "home-page-check-text"><i>See our <a href="{{ url_for('about') }}" aria-label="redirect to about page link">about page</a> for more details on the attributes tested!</i>
+            <p class="home-page-check-text"><i>See our <a href="{{ url_for('about') }}"
+                        aria-label="redirect to about page link">about page</a> for more details on the attributes
+                    tested!</i>
             </p>
         </div>
         <div class="row">

@@ -40,27 +40,36 @@
                         <!--Show the home/about pages regardless of user status-->
                         <li class="nav-item"><a class="nav-link" aria-current="page"
                                 href="{{ url_for('get_recovery') }}" aria-label="home page">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}" aria-label="about page">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}"
+                                aria-label="about page">About</a></li>
                         <!--If the user has logged in-->
                         {% if session.user %}
                         <!--If the user is an admin, manage users page is available-->
                         {% if session.user|lower == "admin"|lower %}
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('manage_users') }}" aria-label="manage users page">Manage Users</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('manage_users') }}"
+                                aria-label="manage users page">Manage Users</a>
                         </li>
                         {% endif %}
                         <!--for all other users that are logged in, display the below pages-->
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('all_entries') }}" aria-label="all entries page">All Entries</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('all_entries') }}"
+                                aria-label="all entries page">All Entries</a>
                         </li>
                         <li class="nav-item"><a class="nav-link"
-                                href="{{ url_for('profile', username=session['user']) }}" aria-label="profile page">Manage Profile</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('new_entry') }}" aria-label="new entry page">New Entry</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}" aria-label="logout page">Log Out</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('password_update') }}" aria-label="settings page">Settings</a>
+                                href="{{ url_for('profile', username=session['user']) }}"
+                                aria-label="profile page">Manage Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('new_entry') }}"
+                                aria-label="new entry page">New Entry</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}"
+                                aria-label="logout page">Log Out</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('password_update') }}"
+                                aria-label="settings page">Settings</a>
                         </li>
                         {% else %}
                         <!--Show the login/create account pages regardless of user status-->
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}" aria-label="login page">Log In</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('create_account') }}" aria-label="create account page">Create
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}"
+                                aria-label="login page">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('create_account') }}"
+                                aria-label="create account page">Create
                                 Account</a></li>
                         {% endif %}
                     </ul>
@@ -101,7 +110,8 @@
                         </li>
                         <li class="list-inline-item footer-links">
                             <!--link and appropriate icon-->
-                            <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="link for facebook">
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener"
+                                aria-label="link for facebook">
                                 <span>
                                     <i class="fab fa-facebook facebook"></i>
                                 </span>
