@@ -965,7 +965,8 @@ This site is deployed on Heroku. Heroku is a free online hosting service for app
 #### Heroku Deployment
 This project was deployed through Heroku using the following steps:
 
-*Requirements and Procfile*
+_Requirements and Procfile_
+
 Heroku needs to know which technologies are being used and any requirements, so I created files to let it know. Before creating the Heroku app, create these files using the following steps in GitPod:
 
 * In the GitPod terminal, type pip3 freeze --local > requirements.txt to create your requirements file.
@@ -980,11 +981,11 @@ Create an env.py file using the following information:
 
 import os
 
-os.environ.setdefault("IP", "0.0.0.0")
-os.environ.setdefault("PORT", "5000")
-os.environ.setdefault("SECRET_KEY", " *unique secret key* ")
-os.environ.setdefault("MONGO_URI", " *unique uri from mongo.db * ")
-os.environ.setdefault("MONGO_DB", " *database name* ")
+* os.environ.setdefault("IP", "0.0.0.0")
+* os.environ.setdefault("PORT", "5000")
+* os.environ.setdefault("SECRET_KEY", " *unique secret key* ")
+* os.environ.setdefault("MONGO_URI", " *unique uri from mongo.db * ")
+* os.environ.setdefault("MONGO_DB", " *database name* ")
 
 Because this contains sensitive information, this needs to be added to the '.gitignore' file.
 
@@ -1011,7 +1012,7 @@ Key |	Value
 IP |	0.0.0.0
 PORT |	5000
 SECRET_KEY |	Secure secret key
-MONGO_URI |	mongodb+srv://root:PASSWORD@myfirstcluster.dr4g1.mongodb.net/recovery_pod?retryWrites=true&w=majority
+MONGO_URI |	mongodb+srv://root:PASSWORD@myfirstcluster.lkzob.mongodb.net/recovery_pod?retryWrites=true&w=majority
 MONGO_DBNAME |	recovery_pod
 
 * Go back to the 'Deploy' tab and you can now click 'Enable Automatic Deployment'
