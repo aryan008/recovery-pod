@@ -800,7 +800,7 @@ Test #|Narrative|Expected|Test Narrative|Result|Fix
 8|Footer links work appropriately |New tab with footer URL present |Clicked on the footer elements |Pass |N/A
 9|Buttons are clearly displayed on all device sizes |Clear visibility of buttons |Viewed buttons on all device sizes |Issue with viewing on mobile - colouring |Fixed as part of commit [#143](https://github.com/aryan008/recovery-pod/commit/2ab6ced9913337b8a5aabde6e107edc3e14dd981)
 10|Login error handling |Username and password check and correct errors |Tried to login with username/Password incorrect |Pass |N/A
-11|Create account error handling |Username and password check and correct errors |Tried to create an account with (a)Username exists (b) Incorrect text format |Pass |N/A
+11|Create account error handling |Username and password check and correct errors |Tried to create an account with (a)Username exists (b) Form validation - Incorrect text format (5-15 letters/numbers) |Pass |N/A
 12|Home page site user buttons |Login/Create account buttons disappear on login |Logged in and viewed if buttons found |Pass |N/A
 13|All entries show all entries |All entries shown for all users |Viewed the entries and compared to database |Pass |N/A
 14|Search bar on all entries |Search bar search/no results found shown appropriately |Tried to search a user that exists and that doesnt exist |Pass |N/A
@@ -813,13 +813,22 @@ Test #|Narrative|Expected|Test Narrative|Result|Fix
 21|Administrator cannot delete account on profile page |Button to delete account is not present for admin |Not present when logged in as admin |Pass |N/A
 22|New entry options selected apply correct score |Depending on the attribute option the user selects when making an entry, the correct individual score is applied based on the matric scoring section |Entered multiple entries and along with a series of print statements, viewed the scores appending to the user selection |Pass |N/A
 23|Log out function |On clicking log out, the session cookie is removed and the user is logged out with visitor navbar priviliges applied |Log out tested across multiple users |Pass |N/A
-24|Settings - Password change |On changing the password: (a) current password checked against database (b)New and confirm passwords match and have appropriate format & (c)Password updates on database for that user |(a)Tried to change the password for users which doesnt match database password (b)Tried to mismatch the new/confirm passwords (c)Logged in again once the password was reset with new password |Pass |N/A
+24|Settings - Password change |On changing the password: (a) current password checked against database (b)Form validation (5-15 letters/numbers) and New and confirm passwords match and have appropriate format & (c)Password updates on database for that user |(a)Tried to change the password for users which doesnt match database password (b)Tried to mismatch the new/confirm passwords, tried to enter non-validating passwords (c)Logged in again once the password was reset with new password |Pass |N/A
 25|Manage users navbar view |Manage users only available for administrators |Logged in as admin to see if view and all users came in |Pass |N/A
 26|Manage users - delete profile |As an admin, ability to delete users and all their entries |Deleted a user as admin and view all entries page/database to see if their username and entries appropriately deleted |Pass |N/A
 27|Manage users - no admin |Administrator not present on manage users to delete |Viewed the manage users page to ensure administrator cannot accidentally delete their account |Administrator was showing initially |Fixed on commit [#144](https://github.com/aryan008/recovery-pod/commit/5ba22ce45c5cfbe46f3fa9eb6727f91587ef629f)
-28| | | | |
-29| | | | |
-30| | | | |
+28|Visitor can enter comments on an entry |Comments posted go to the database |Entered entries with comments |Pass |N/A
+29|Entry posting works correctly |When the user posts an entry using the button, it redirects to their profile with the score and posts to the database |Entry submission redirect to profile check and database check |Pass |N/A
+30|Edit entry posting works correctly |When the user edits an entry using the button, it redirects to their profile with the score and overwrites the previous entry on the database |Entry edit redirect to profile check with new score and database check |Pass |N/A
+31|Cancel edit entry |User can cancel an edit entry using the button |Cancelled an edit entry and redirect back to profile with original score |Pass |N/A
+32|Welcome message |On creating an account, user is greeted with a welcome message on their profile |Created an account and viewed the flash message to see if welcome username message present |Pass |N/A
+33|Flash messages |Site handling error messages present on: Login/Create account/Entry added/Entry edited/Entry deleted/No entry today/Profile deletion/Password change |Completed all of these tasks and viewed flash messages |Pass |N/A
+34|All entries score colouring |Green/Yellow/Red depending on score for all entries |Tested multiple score submissions for different users and viewed all entries page |Pass |N/A
+35|User entry - entry requirement fulfilled |When user makes an entry and tries to make another one, not available and user informed via flash message|Tried to navigate to make a new entry when an entry for today has already been made |Pass |Fail
+36|User entry - future date selected |If user makes a future entry date but no entry for today, user can still submit todays entry |Created a future date entry and posted an entry for today |Pass |N/A
+36|URL manual edits |User cannot manually enter in a different users URL to view that different account |Manually edited the URL of a different user to view the page |Pass |N/A
+37|Confirmtion messages on all "delete" buttons |When a user/admin tries to delete an account/their account or entry respectively, the user is prompted with an "Are you sure?". Once they hit ok, the action is passed and the function executes. If they cancel, the action is disabled |As both admin and user, reviewed to ensure this message is prompted |Pass |N/A
+38|Navbar page currently on is highlighted and underlined |Whatever site page the visitor/user/admin is on, the navbar is highlighted and underlined |Clicked through all the pages for all user types |Pass |N/A
 
 ### Testing User Stories from User Experience (UX) Section
 
