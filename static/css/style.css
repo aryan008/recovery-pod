@@ -64,6 +64,14 @@ footer {
     background-color: rgb(255,255,255);
 }
 
+.btn-danger {
+    background-color: #9F0414;
+}
+
+.btn-success {
+    background-color: #12593B;
+}
+
 .recovered {
     background-color: rgb(15, 145, 15) !important;
 }
@@ -139,6 +147,10 @@ footer {
     font-weight: bold;
     font-size: .8rem;
     position: relative;
+}
+
+.home-page-check-text i a, .link-colouring {
+    color: #A0C5FD;
 }
 
 /*---home page div colouring---*/ 
