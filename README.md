@@ -932,11 +932,30 @@ As a returning/frequent visitor of the site, I want:
 *	External links present on the “About” page
 
 #### Known Bugs
-There are two known bugs in the site:
-*	When the user has “Edit entry” button on their day’s entry, the “Active” class is not reapplied to the “New Entry” link in the Navbar.
-*	JSON file – Property python.linting.pylintEnabled is not allowed
+There are known bugs in the site as discussed below - split between actual and validator bugs. The majority of them relate to the HTML online validator which I have rebutted in my comments below.
 
-Despite these known bugs, in the interest of time I will have to leave them in the site even though I would prefer to get them fixed.
+#### Actual Bugs
+*	When the user has “Edit entry” button on their day’s entry, the “Active” class is not reapplied to the “New Entry” link in the Navbar.
+*	Since the Gitpod update on 01/07/21, I am getting 4 errors titled "X extension is not found in Open VSX". These are known issues on Gitpod's end, and as discussed on the CI slack channel, there isnt much I can do about this.
+*	Since the Gitpod update on 01/07/21, I am getting 8 deprecation errors on the terminal in Gitpod. Assuming this is due to the update I cant fix, I cannot install any new extensions as I am on my work laptop and that is forbidden.
+
+Despite these known bugs, in the interest of time I will have to leave it in the site even though I would prefer to get them fixed.
+
+#### HTML Validator Bugs
+*	No p element in scope but a p end tag seen(Profile page). This is due to the Jinja templating not recognising that the p class is part of the else statement. Not a true error and so can be discarded. See [screenshot](static/rm_files/profile-page-p-error.PNG) for error and [screenshot](static/rm_files/profile-page-p-code.PNG) for code showing to be unrecognised as an error
+*	Stray end tag head. This is due to the Jinja templating not recognising that the head tag has been opened and closed appropriately. Not a true error and so can be discarded. See [screenshot](static/rm_files/base-page-head-error.PNG) for error and [screenshot](static/rm_files/base-page-head-code.PNG) for code showing to be unrecognised as an error
+*	Start tag body seen but an element of the same type was already open. This is due to the Jinja templating not recognising that the body tag has been opened and closed appropriately. Not a true error and so can be discarded. See [screenshot](static/rm_files/base-page-body-error.PNG) for error and [screenshot](static/rm_files/base-page-body-code.PNG) for code showing to be unrecognised as an error, and further at the bottom of the base.html page for closing body tag.
+*	Text not allowed in element ul in this context.. This is due to the Jinja templating not recognising that jinja language is not allowed in a list. Not a true error and so can be discarded. See [screenshot](static/rm_files/base-page-list-error.PNG) for error.
+
+As explained, these are technically not bugs and no further comments to be made.
+
+There are a number of HTML validator errors that occur due to the use of the Jinja templating language:
+1)	This error is that an opening parenthesis is not allowed, and that this occurs whenever a “URL for” link is present. See [link](static/rm_files/site-jinja-error.PNG) for error. This is not a true error and as such can be discarded.
+2)	This error is to do with a language attribute on each page. This is because Jinja brings this in through extension of the base.html, and the validator picks it up as missing. Not a true error and so can be discarded. See [link](static/rm_files/site-jinja-lang-error.PNG) for screenshot of error.
+3)	This error relates to the fact that a lang & doctype is missing from the html pages. This is because Jinja brings this in through extension of the base.html, and the validator picks it up as missing. Not a true error and so can be discarded. See [link](static/rm_files/site-jinja-doctype-head-error.PNG) for screenshot of error.
+4)	This error relates to the fact that a jinja for loop is present in the all entries/manage users pages. Not a true error and so can be discarded. See [link](static/rm_files/allentries-page-table-error.PNG) for screenshot of error.
+
+As explained, these are technically not bugs and no further comments to be made.
 
 ## Deployment
 
