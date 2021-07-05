@@ -11,9 +11,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-
-
-
 # Initialise flask and wire up Mongo DB
 app = Flask(__name__)
 
