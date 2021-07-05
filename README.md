@@ -798,7 +798,7 @@ Test #|Narrative|Expected|Test Narrative|Result|Fix
 6|Site admin navbar headers |Present: Same as 5) above with manage users in navbar |Viewed site as the admin |Pass |N/A
 7|Linked text/sourced redirects work appropriately |Redirect to appropriate page on clicking/Sources open on new page |Clicked on all links in site |Pass |N/A
 8|Footer links work appropriately |New tab with footer URL present |Clicked on the footer elements |Pass |N/A
-9|Buttons are clearly displayed on all device sizes |Clear visibility of buttons |Viewed buttons on all device sizes |Pass |N/A
+9|Buttons are clearly displayed on all device sizes |Clear visibility of buttons |Viewed buttons on all device sizes |Issue with viewing on mobile - colouring |Fixed as part of commit [#143](https://github.com/aryan008/recovery-pod/commit/2ab6ced9913337b8a5aabde6e107edc3e14dd981)
 10|Login error handling |Username and password check and correct errors |Tried to login with username/Password incorrect |Pass |N/A
 11|Create account error handling |Username and password check and correct errors |Tried to create an account with (a)Username exists (b) Incorrect text format |Pass |N/A
 12|Home page site user buttons |Login/Create account buttons disappear on login |Logged in and viewed if buttons found |Pass |N/A
@@ -808,8 +808,18 @@ Test #|Narrative|Expected|Test Narrative|Result|Fix
 16|Prompt on profile for no entry today |A message prompting the user to submit their entry for today |Logged in as a user with no entry for today |Pass |N/A
 17|Review of narrative on user score |Recovered/Moderately/Low depending on score |Tested multiple score submissions for different users |Pass |N/A
 18|Edit entry redirect and update |On clicking the edit entry, the user is redirected to edit that entry and when posted it updates the database |Edited an entry a user has submitted |Pass |N/A
-19|Delete entry message and deletion |On clicking delete entry, entry wiped from database and user prompt message appears |Deleted an entry to view result |Pass |N/A
-20| | | | |
+19|Delete entry message and deletion |On clicking delete entry, entry wiped from database and user prompt message appears |Deleted an entry to view result and database check to ensure removal |Pass |N/A
+20|User can delete account on profile page |On clicking delete account, username is wiped from the database |Deleted an account and viewed the database |Pass |N/A
+21|Administrator cannot delete account on profile page |Button to delete account is not present for admin |Not present when logged in as admin |Pass |N/A
+22|New entry options selected apply correct score |Depending on the attribute option the user selects when making an entry, the correct individual score is applied based on the matric scoring section |Entered multiple entries and along with a series of print statements, viewed the scores appending to the user selection |Pass |N/A
+23|Log out function |On clicking log out, the session cookie is removed and the user is logged out with visitor navbar priviliges applied |Log out tested across multiple users |Pass |N/A
+24|Settings - Password change |On changing the password: (a) current password checked against database (b)New and confirm passwords match and have appropriate format & (c)Password updates on database for that user |(a)Tried to change the password for users which doesnt match database password (b)Tried to mismatch the new/confirm passwords (c)Logged in again once the password was reset with new password |Pass |N/A
+25|Manage users navbar view |Manage users only available for administrators |Logged in as admin to see if view and all users came in |Pass |N/A
+26|Manage users - delete profile |As an admin, ability to delete users and all their entries |Deleted a user as admin and view all entries page/database to see if their username and entries appropriately deleted |Pass |N/A
+27|Manage users - no admin |Administrator not present on manage users to delete |Viewed the manage users page to ensure administrator cannot accidentally delete their account |Administrator was showing initially |Fixed on commit [#144](https://github.com/aryan008/recovery-pod/commit/5ba22ce45c5cfbe46f3fa9eb6727f91587ef629f)
+28| | | | |
+29| | | | |
+30| | | | |
 
 ### Testing User Stories from User Experience (UX) Section
 
