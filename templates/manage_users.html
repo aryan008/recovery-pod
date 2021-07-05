@@ -25,6 +25,9 @@
             {% if full_users_list|length > 0 %}
             <!--for loop to get all usernames-->
             {% for user in full_users_list %}
+            {% if user.username == "admin" %}
+            <!--if statement to not show the admin on search result-->
+            {% else %}
             <!--https://stackoverflow.com/questions/9139075/how-to-show-a-confirm-message-before-delete-->
             <!--username deletion button with message confirmation-->
             Username: {{ user.username }} <a href="{{ url_for('delete_user', username=user.username) }}"
@@ -32,6 +35,7 @@
                 class="btn btn-danger btn-sm user-delete-button">Delete</a>
             <br>
             <hr class="featurette-divider">
+            {% endif %}
             {% endfor %}
             {% else %}
             <!--narrative if no results found-->
