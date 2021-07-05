@@ -634,8 +634,9 @@ On this form to be completed, it begins with a date picker in which the user is 
 Using error handling in Python as documented in the app.py file, a score is then calculated for the user which then redirects them back to their profile and their recovery score for the day.
 The makeup of this scoring matrix and calculation basis is through using a python dictionary for each attribute’s option selection and related score, and then totalling them up. Note that the score has been set up to never exceed 100%.
 
-Before delving into the makeup of these dictionaries, it must be mentioned that not all attributes are created equal. As an example, the attribute of sleep is more heavily weighted scoring wise than say feeling. If a user entered a top score on both, they would get scores of 25% and 10% respectively. This “weighting” allows the users to focus on the “big hitters” of recovery and affirms the age-old wisdom of sleep is paramount. 
-![See the below following dictionaries for further information]:
+Before delving into the makeup of these dictionaries, it must be mentioned that not all attributes are created equal. As an example, the attribute of sleep is more heavily weighted scoring wise than say feeling. If a user entered a top score on both, they would get scores of 25% and 10% respectively. This “weighting” allows the users to focus on the “big hitters” of recovery and affirms the age-old wisdom of sleep is paramount. See the below dictionaries for further information.
+
+![See the below dictionaries for further information](static/rm_files/dictionary-scoring.PNG)
 
 As part of test #2 in the testing section below, if a user were to select the “best” option for each attribute, they would get a recovery score of 100%. Similarly with test #3, if the user were to select the “worst” options, their score would be 32%.
 
@@ -746,13 +747,33 @@ Used for user entry submission logic in this project
 The W3C Markup Validator, W3C CSS Validator, JSHint JavaScript Validator Services, PEP8 online and GTMetrix were used to validate the project to ensure there were no errors in the project.
 See the attached [link](testing_results.md) for the screenshot results of the code validation section.
 
-[W3C Markup Validator](https://validator.w3.org/) - [Results screenshot](assets/rm_files/html-validator.PNG)
+[W3C Markup Validator](https://validator.w3.org/) - [Results screenshot](static/rm_files/w3c-validator-result.PNG)
 
+The following fixes were necessary on review of the results:
+* Commit [#155](https://github.com/aryan008/recovery-pod/commit/8470814b747f429b3630a28fa38e77e6011fcffd) – label header class fix on entry posting.
+* Commit [#156](https://github.com/aryan008/recovery-pod/commit/b4677014cdedf3dd1159cc24f17b7c90c921c03c) – label header class fix on search function.
+* Commit [#157](https://github.com/aryan008/recovery-pod/commit/728022e9b597b566b6b99a60ccd8b520a0d641f0) – duplicate id on login/create account username input.
+* Commit [#158](https://github.com/aryan008/recovery-pod/commit/80b2b7fbe5f809951c2d3246c2bd90283608d29a) – duplicate id on password reset/create account helper field.
+* Commit [#161](https://github.com/aryan008/recovery-pod/commit/615c19b14a14b2b520b2fcf510068efb84b3a676) – aria label and label fix
+* Commit [#162](https://github.com/aryan008/recovery-pod/commit/08ab022d8e2919251f9809438c428df412e2ba06) – Fix of label on edit/new entry forms
+
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - [Results screenshot](static/rm_files/jigsaw-validator-result.PNG)
+
+The following fix was necessary on review of the results:
+* Commit [#165](https://github.com/aryan008/recovery-pod/commit/8a2dc10cb0173f86474a54830b98c99f215ac55a) – Fix value of none for home page circle in style.css
+
+The JavaScript Code Library file was validated using the JSHint static code analysis tool.
+[JSHint JS Validator](https://jshint.com/) – [Results screenshot](static/rm_files/jshint-result.PNG)
 No fixes from the above test were necessary on review of the results.
 
-[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - [Results screenshot](assets/rm_files/css-validator.PNG)
+[PEP8 Online](http://pep8online.com/)– [Results screenshot](static/rm_files/pep8-result.PNG)
+As part of commit #167, fixes were necessary on review of the results.
 
+[GTMetrix](https://gtmetrix.com/)– [Results screenshot](static/rm_files/gtmetrix-result.PNG)
 No fixes from the above test were necessary on review of the results.
+Link to GTMetrix: https://gtmetrix.com/reports/recovery-pod.herokuapp.com/XM9CYU1K/
+
 
 ### Accessibility Testing
 
@@ -762,37 +783,40 @@ See the attached [link](testing_results.md) for the screenshot results of the Ac
 
 See the below to review the screenshots of successful accessibility testing on the site for Google Lighthouse.
 
-* Lighthouse mobile: [link](assets/rm_files/google-lighthouse-mobile.PNG)
-* Lighthouse desktop: [link](assets/rm_files/google-lighthouse-desktop.PNG)
+* Lighthouse mobile: [link](static/rm_files/lighthouse-mobile.PNG)
+* Lighthouse desktop: [link](assets/rm_files/lighthouse-desktop.PNG)
 
-[WAVE](https://developers.google.com/web/tools/lighthouse) Web Accessibility. For the WAVE specific testing live link, click on the [following](https://wave.webaim.org/report#/https://aryan008.github.io/rock-paper-scissors-m2/).
-For the static results, see [here](assets/rm_files/wave-result.PNG).
+No issues noted on the lighthouse testing.
 
-No known issues were present on either of these accessibility tests.
+[WAVE](https://wave.webaim.org/) Web Accessibility. For the WAVE specific testing live link, click on the [following](https://wave.webaim.org/report#/https://recovery-pod.herokuapp.com/).
+
+WAVE testing yielded the following update:
+Commit [#168](https://github.com/aryan008/recovery-pod/commit/1ae6a3da7b9f10aa72885b678453d52ee9cb78ac) – edits to colouring of buttons for contrast
+
 
 ### Responsive Testing
 The site's repsonsiveness was tested using [Google's Mobile Friendly Tester](https://search.google.com/test/mobile-friendly) and [Responsinator](https://www.responsinator.com/).
 See the attached [link](testing_results.md) for the screenshot results of the Responsive testing section.
 
-See the following [link](assets/rm_files/googlr-mobile-friendly-tester.PNG) to review the screenshot of successful responsive testing of the site for Google's Mobile Friendly Tester.
-See the following [link](https://search.google.com/test/mobile-friendly?id=UYF7jPVjfbJ-Xh_Xuf8E2Q) for the live test of Google's Mobile Friendly Tester.
+See the following links to review the screenshots of successful responsive testing on all pages of the site for Google's Mobile Friendly Tester. Note that I could not test all pages on this due to inability to log in on the site, however this was reviewed as part of developer review on google resizing on the “inspect” view of the live page. You can also login as part of the Responsinator testing below to review mobile friendliness.
+1)	[Link](assets/rm_files/mobile-page1-test-results.PNG).
+2)	[Link](assets/rm_files/mobile-page2-test-results.PNG).
+3)	[Link](assets/rm_files/mobile-page3-test-results.PNG).
+4)	[Link](assets/rm_files/mobile-page4-test-results.PNG).
 
-To review the Responsinator testing, click [here](https://www.responsinator.com/?url=https%3A%2F%2Faryan008.github.io%2Frock-paper-scissors-m2%2F). As part of responsive testing, the site was tested across all device sizes per this link and no issues were found.
+See the following [link](https://search.google.com/test/mobile-friendly?id=w8Kh9gIimqChdM-9mS0gJQ) for the live test of Google's Mobile Friendly Tester.
+
+
+To review the Responsinator testing, click [here](http://www.responsinator.com/?url=recovery-pod.herokuapp.com%2Fget_recovery). As part of responsive testing, the site was tested across all device sizes per this link and no issues were found. As noted above, the reviewer can login on this site and review responsiveness across all pages.
+
+See below for examples of screenshots of the “logged in” pages:
+1)	[Link](assets/rm_files/responsinator-1.PNG).
+2)	[Link](assets/rm_files/responsinator-2.PNG).
+3)	[Link](assets/rm_files/responsinator-3.PNG).
+4)	[Link](assets/rm_files/responsinator-4.PNG).
 
 [Chrome devtools device mode](https://developers.google.com/web/tools/chrome-devtools/device-mode) was also used to test the site’s responsiveness. Manual testing was also performed via resizing the browser to review for issues at varying browser screen sizes.
 No known issues were present on these responsive tests.
-
-[JSHint JS Validator](https://jshint.com/) - [Results screenshot](assets/rm_files/jshint.PNG)
-
-No fixes from the above test were necessary on review of the results.
-
-[PEP8 Online](http://pep8online.com/) - [Results screenshot](assets/rm_files/jshint.PNG)
-
-No fixes from the above test were necessary on review of the results.
-
-[GTMetrix](https://gtmetrix.com/) - [Results screenshot](assets/rm_files/jshint.PNG)
-
-No fixes from the above test were necessary on review of the results.
 
 ### Manual Testing
 Note that the manual testing below does not include screenshots of the result. The site developer has manually tested them and ensured the testing is completed appropriately.
