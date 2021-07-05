@@ -1,8 +1,8 @@
 <h1 align = "center">Recovery Pod</h1>
 
-View the live project at the following [link]()
+View the live project at the following [link](https://recovery-pod.herokuapp.com/)
 
-![See how the site looks across the devices]()
+![See how the site looks across the devices](static/rm_files/responsive.PNG)
 
 We are seeing a massive rise in Athlete’s understanding of how recovery plays an impact in areas such as performance, mood regulation and general wellbeing. Applications such as Whoop, Output Sports and Apex Athlete Series have done phenomenally well in the last number of years in areas such as sleep monitoring, load measuring and performance-based metrics. However, the true use of these sites is often stuck behind a massive paywall and require expensive equipment. 
 
@@ -509,7 +509,7 @@ Once they have created this account/ logged in, the site navbar allows them to:
 
 If the administrator is logged in, they will have all of the above features but will have a special “Manage Users” section, where they can view all users that use the site and delete their profiles as they wish.
 
-See below for a diagram of the site logic.
+See [link](static/rm_files/logic-diagram.pdf) for a diagram of the site logic.
 
 ### User Types and permissions
 There are three types of users that this website is designed for:
