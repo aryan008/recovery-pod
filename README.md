@@ -962,45 +962,81 @@ As explained, these are technically not bugs and no further comments to be made.
 ### Process of deployment
 This site is deployed on Heroku. Heroku is a free online hosting service for applications using multiple languages including Python. For this reason, it was chosen to host this project. To deploy this app on Heroku please follow the steps outlined below:
 
-*Heroku*
-1.	Navigate to the repository for this project ms3-crew-dictionary and click on the green button to open the menu
-2.	You can either download the zip file and extract it into your local directory or copy the link to the repository and clone it in the command line
-3.	Create a new repository in Github and push this project into the new repository.
-4.	Log in to Heroku if you have an account or if you do not have an account, create a new account.
-5.	when in the Heroku dashboard, click on the "New" button and then select "Create new app"
-6.	On the next screen enter an app name (must be unique) and select the region closest to you.
-7.	In the deploy section, click on "Connect to GitHub"
-8.	Select your Github user account and search for the repository that you want to deploy.
-9.	If you want, you can enable Automatic Deployment. This will build your application each time you push any changes to GitHub.
-10.	Navigate to settings and select "Reveal Config Vars. Here you will enter the configuration keys and values from your env.py file. They should look similar to this:
+#### Heroku Deployment
+This project was deployed through Heroku using the following steps:
 
-IP: 0.0.0.0
-PORT: 5000
-MONGO_DBNAME: [name of your database]
-MONGO_URI: mongodb://<dbuser>:<dbpassword>@ds225442.mlab.com:25442/<dbname>
-SECRET_KEY: [any string of characters. the longer the better]
+*Requirements and Procfile*
+Heroku needs to know which technologies are being used and any requirements, so I created files to let it know. Before creating the Heroku app, create these files using the following steps in GitPod:
 
-11.	Now go back to the "Deploy" tab and click on "Deploy Branch"
-12.	The website should be deployed on https://[your_app_name].herokuapp.com/
+* In the GitPod terminal, type pip3 freeze --local > requirements.txt to create your requirements file.
+* In the GitPod terminal, type echo web: python run.py > Procfile to create your Procfile.
+* The Procfile needs to contain the following line: web: python3 app.py and make sure there is no additional blank line after it.
+* Push these files to your repository.
 
-*Local Deployment*
-1.	Create a development project folder and navigate to it cd /[folder path]
-2.	Initialise Git git init
-3.	Clone the project repository into your local development folder git clone https://github.com/bowets/ms3-crew-dictionary.git
-4.	Install Python 3
-5.	Install Pip
-6.	Create a virtual environment for your local project
-7.	Install Flask
-8.	Install PyMongo
-9.	Install the packages in the requirements.txt file
-10.	Create an env.py file with the following parameters:
-IP: 0.0.0.0
-PORT: 5000
-MONGO_DBNAME: [name of your database]
-MONGO_URI: mongodb://<dbuser>:<dbpassword>@ds225442.mlab.com:25442/<dbname>
-SECRET_KEY: [any string of characters. the longer the better]
-The project already contains a .gitignore file which contains env.py 
-11. Run the project python app.py
+
+#### Environmentals File
+
+Create an env.py file using the following information:
+
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", " *unique secret key* ")
+os.environ.setdefault("MONGO_URI", " *unique uri from mongo.db * ")
+os.environ.setdefault("MONGO_DB", " *database name* ")
+
+Because this contains sensitive information, this needs to be added to the '.gitignore' file.
+
+#### Creating Heroku App
+* Log into Heroku
+* Select 'Create New App' from your dashboard
+* Choose an app name (if there has been an app made with that name, you will be informed and will need to choose an alternative)
+* Select the appropriate region based on your location
+* Click 'Create App'
+
+#### Connecting to GitHub
+* From the dashboard, click the 'Deploy' tab towards the top of the screen
+* From here, locate 'Deployment Method' and choose 'GitHub'
+* From the search bar newly appeared, locate your repository by name
+* When you have located the correct repository, click 'Connect'
+* DO NOT CLICK 'ENABLE AUTOMATIC DEPLOYMENT': This can cause unexpected errors before configuration. We'll come back to this
+* Click the 'Settings' tab towards the top of the page
+* Locate the 'Config Vars' and click 'Reveal Config Vars'
+
+Use the following keys and values which must match the key/value pairs in your env.py file:
+
+Key |	Value
+-------- | ---------
+IP |	0.0.0.0
+PORT |	5000
+SECRET_KEY |	Secure secret key
+MONGO_URI |	mongodb+srv://root:PASSWORD@myfirstcluster.dr4g1.mongodb.net/recovery_pod?retryWrites=true&w=majority
+MONGO_DBNAME |	recovery_pod
+
+* Go back to the 'Deploy' tab and you can now click 'Enable Automatic Deployment'
+* Underneath, locate 'Manual Deploy'; choose the master branch and click 'Deploy Branch'
+* Once the app is built (it may take a few minutes), click 'Open App' from the top of the page
+
+#### Forking the Repository
+* Log in to GitHub and locate the GitHub Repository
+* At the top of the Repository above the "Settings" Button on the menu, locate the "Fork" Button.
+* You will have a copy of the original repository in your GitHub account.
+* You will now be able to make changes to the new version and keep the original safe.
+
+#### Making a Local Clone
+* Log into GitHub.
+* Locate the repository.
+* Click the 'Code' dropdown above the file list.
+* Copy the URL for the repository.
+* Open Git Bash on your device.
+* Change the current working directory to the location where you want the cloned directory.
+* Type git clone in the CLI and then paste the URL you copied earlier. This is what it should look like:
+* $ git clone https://github.com/aryan008/recovery-pod
+* Press Enter to create your local clone.
+NB: In order to work with a clone of this project, you will need to create the env.py file using your own variables and create a MongoDB database matching the one documented in the Mongo DB section of this doc.
+
+You will also need to install all of the packages listed in the requirements file you can use the following command in the terminal pip install -r requirements.txt which will do it for you.
 
 ## Credits
 ### Content
@@ -1011,6 +1047,7 @@ The project already contains a .gitignore file which contains env.py
 * Responsive image at the top of the ReadMe file is from [Am I Responsive](http://ami.responsivedesign.is/).
 * Bootstrap 5: [Link](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 * Inspiration for the project was taken from [Whoop.com](https://www.whoop.com/?gclid=Cj0KCQjw24qHBhCnARIsAPbdtlJMEeBAwL6vnVGpczV1gEFtw6Z9vybBGAYaTQhIIfbe7UPaKCGNbxAaAjisEALw_wcB)
+* Deployment notes - Amy O Shea MS3 project [here](https://github.com/AmyOShea/MS3-Cocktail-Hour)
 
 ### Media
 #### Attribute sources/links
