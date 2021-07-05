@@ -19,16 +19,22 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 # Create the eight dictionaries that house the user form response scoring
-ATTRIBUTE_1_DICT ={"No": 2,"Yes - Pool": 3, "Yes - Ice Bath/Sea Swim": 5}
-ATTRIBUTE_2_DICT ={"Not at all": 3,"Somewhat nutritious": 7, "Very nutritious": 10}
-ATTRIBUTE_3_DICT ={"Yes - Tough session(s)": 5,"Yes - Light Session(s)": 10, "No": 15}
-ATTRIBUTE_4_DICT ={"Less than 6 hours": 8,"6-7.5 hours": 17, "7.5+ hours": 25}
-ATTRIBUTE_5_DICT ={"Exhausted/Tired": 3,"Ok": 7, "Good/Fresh": 10}
-ATTRIBUTE_6_DICT ={"<1 Litre": 5,"1-3 Litres": 10, "3+ Litres": 15}
-ATTRIBUTE_7_DICT ={"No": 3,"Yes - Less than 10 mins": 7, "Yes - More than 10 mins": 10}
-ATTRIBUTE_8_DICT ={"No": 3,"Yes - Less than 10 mins": 7, "Yes - More than 10 mins": 10}
+ATTRIBUTE_1_DICT = {"No": 2, "Yes - Pool": 3, "Yes - Ice Bath/Sea Swim": 5}
+ATTRIBUTE_2_DICT = {"Not at all": 3, "Somewhat nutritious": 7,
+                    "Very nutritious": 10}
+ATTRIBUTE_3_DICT = {"Yes - Tough session(s)": 5, "Yes - Light Session(s)": 10,
+                    "No": 15}
+ATTRIBUTE_4_DICT = {"Less than 6 hours": 8, "6-7.5 hours": 17,
+                    "7.5+ hours": 25}
+ATTRIBUTE_5_DICT = {"Exhausted/Tired": 3, "Ok": 7, "Good/Fresh": 10}
+ATTRIBUTE_6_DICT = {"<1 Litre": 5, "1-3 Litres": 10, "3+ Litres": 15}
+ATTRIBUTE_7_DICT = {"No": 3, "Yes - Less than 10 mins": 7,
+                    "Yes - More than 10 mins": 10}
+ATTRIBUTE_8_DICT = {"No": 3, "Yes - Less than 10 mins": 7,
+                    "Yes - More than 10 mins": 10}
 
 mongo = PyMongo(app)
+
 
 # Route for the home page
 @app.route("/")
@@ -49,7 +55,8 @@ def get_recovery():
         user_check = "No"
 
     # Render template with appropriate variables
-    return render_template("recovery.html", recovery=recovery, user_check=user_check)
+    return render_template("recovery.html", recovery=recovery,
+                           user_check=user_check)
 
 
 # Route for the create account page
@@ -72,9 +79,11 @@ def create_account():
         }
         mongo.db.users.insert_one(register)
 
-        # put the new user into 'session' cookie with a welcome message and redirect to their profile
+        # put the new user into 'session' cookie with a welcome message
+        # and redirect to their profile
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful! {}, thanks for joining the team.".format(request.form.get("username")))
+        flash("Registration Successful! {}, thanks for joining the team."
+              .format(request.form.get("username")))
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("create_account.html")
@@ -127,12 +136,12 @@ def profile(username):
         day_1 = datetime.strptime(date_entered, "%Y-%m-%d")
         day_2 = datetime.strptime(today, "%Y-%m-%d")
 
-        
         # https://stackoverflow.com/questions/8419564/difference-between-two-dates-in-python
         # get the date difference between today and last entry
         date_difference = abs((day_1 - day_2).days)
-        
-        return render_template("profile.html", username=username, result=result, date_difference=date_difference, date_entered=date_entered)
+        return render_template("profile.html", username=username,
+                               result=result, date_difference=date_difference,
+                               date_entered=date_entered)
 
     else:
         abort(404)
@@ -143,7 +152,8 @@ def profile(username):
 def about():
     # create an empty list called data
     data = []
-    # with statement to get the JSON file information and load into the data list
+    # with statement to get the JSON file information
+    # and load into the data list
     with open("data/attributes.json", "r") as json_data:
         data = json.load(json_data)
     return render_template("about.html", attribute_json=data)
@@ -154,9 +164,9 @@ def about():
 def delete_user_user(username):
     # grab the user's username
     username_user = mongo.db.users.find_one({"username": session["user"]})
-    
     if session['user']:
-        # remove the users account from the DB and all the entries they have made
+        # remove the users account from the DB
+        # and all the entries they have made
         mongo.db.users.remove({"username": username})
         mongo.db.entries.remove({"created_by": username})
         session.pop("user")
@@ -174,8 +184,8 @@ def password_update():
         # find the user's current password
         old_password = mongo.db.users.find_one(
             {"username": session["user"]})["password"]
-
-        # if statement that checks if the entered password matches their stored password
+        # if statement that checks if the entered password
+        # matches their stored password
         if check_password_hash(old_password, request.form.get("old_password")):
             # update the users password on the database
             mongo.db.users.update_one(
@@ -202,14 +212,14 @@ def delete_entry(username):
     # if the user is in session
     if session["user"]:
         # find that user's latest entry
-        latest_entry_delete = mongo.db.entries.find({"created_by": username}).sort(username, -1)  
+        latest_entry_delete = mongo.db.entries.find(
+            {"created_by": username}).sort(username, -1)
         latest_delete = list(latest_entry_delete)
         last_entry_list = latest_delete[-1]
         last_entry_list_final = list(last_entry_list.items())
         # Below and above code to grab the _id of the users latest entry
         final_delete = last_entry_list_final[1][1]
         delete_id = last_entry_list_final[0][1]
-    
         # remove this entry from the database
         mongo.db.entries.remove({"_id": delete_id})
         flash("Entry Successfully Deleted!")
@@ -229,7 +239,8 @@ def edit_entry(username):
     # if the user is in session
     if session["user"]:
         # find that user's latest entry
-        latest_entry_edit = mongo.db.entries.find({"created_by": username}).sort(username, -1)  
+        latest_entry_edit = mongo.db.entries.find(
+            {"created_by": username}).sort(username, -1)
         latest_edit = list(latest_entry_edit)
         last_entry_list = latest_edit[-1]
         last_entry_list_final = list(last_entry_list.items())
@@ -246,11 +257,13 @@ def edit_entry(username):
             final_attributes = request.form.getlist("options.choice")
             # start the total counter
             total = 0
-
-            # Note that the score calculation/attribute querying is compliant with the DRY principle.
-            # Despite the formulae looking similar for the edit_entry, new_entry & get_result sections of
-            # this file, based on varying factors they are pulling different stored dictionary information to get
-            # the necessary attributes selected 
+            # Note that the score calculation/attribute querying is
+            # compliant with the DRY principle.
+            # Despite the formulae looking similar for the edit_entry,
+            # new_entry & get_result sections of
+            # this file, based on varying factors they are
+            # pulling different stored dictionary information to get
+            # the necessary attributes selected
             # set up the attribute queries to get each individual response
             attr_1_query = final_attributes[0]
             attr_2_query = final_attributes[1]
@@ -261,8 +274,9 @@ def edit_entry(username):
             attr_7_query = final_attributes[6]
             attr_8_query = final_attributes[7]
 
-            # The below if statements match the user's responses on an 
-            # attribute-by-attribute basis and get the correct values from the constant dictionaries.
+            # The below if statements match the user's responses on an
+            # attribute-by-attribute basis and get the correct values
+            # from the constant dictionaries.
             # The resulting score is then added to the above total counter
             if attr_1_query == list(ATTRIBUTE_1_DICT.keys())[0]:
                 attr_1_result = list(ATTRIBUTE_1_DICT.values())[0]
@@ -271,7 +285,7 @@ def edit_entry(username):
             elif attr_1_query == list(ATTRIBUTE_1_DICT.keys())[2]:
                 attr_1_result = list(ATTRIBUTE_1_DICT.values())[2]
             total += attr_1_result
-            
+
             if attr_2_query == list(ATTRIBUTE_2_DICT.keys())[0]:
                 attr_2_result = list(ATTRIBUTE_2_DICT.values())[0]
             elif attr_2_query == list(ATTRIBUTE_2_DICT.keys())[1]:
@@ -328,14 +342,16 @@ def edit_entry(username):
                 attr_8_result = list(ATTRIBUTE_8_DICT.values())[2]
             total += attr_8_result
 
-            # a dictionary is created based on the users form choices to update the entry
+            # a dictionary is created based on the users
+            # form choices to update the entry
             update = {
                 "option_choice": request.form.getlist("options.choice"),
                 "created_by": session["user"],
                 "user_chosen_date": request.form.get("date_choice"),
                 "submission_date": datetime.today().strftime('%Y-%m-%d'),
                 "comment_text": request.form.get("comment_text"),
-                "name": mongo.db.users.find_one({"username": session["user"]})["_id"],
+                "name": mongo.db.users.find_one(
+                    {"username": session["user"]})["_id"],
                 "score": total
             }
             # update the Mongo DB with the users entry
@@ -343,9 +359,10 @@ def edit_entry(username):
             flash("Edit of entry successful!")
             return redirect(url_for("profile", username=username))
 
-         # the options to populate the form are grabbed from Mongo DB    
+        # the options to populate the form are grabbed from Mongo DB
         options = mongo.db.recovery.find()
-        return render_template("edit_entry.html", username=username, options=options)
+        return render_template("edit_entry.html",
+                               username=username, options=options)
 
     else:
         abort(404)
@@ -371,9 +388,10 @@ def new_entry():
                 {"username": session["user"]})["username"]
 
         # find the users latest entry
-        latest_entry_date = mongo.db.entries.find({"created_by": username}).sort(username, -1)
+        latest_entry_date = mongo.db.entries.find(
+            {"created_by": username}).sort(username, -1)
 
-        # get the date of the last entry of the user    
+        # get the date of the last entry of the user
         initial_list_date = list(latest_entry_date)
         last_entry_date = initial_list_date[-1]
         last_entry_list_date = list(last_entry_date.items())
@@ -389,12 +407,12 @@ def new_entry():
         date_difference = abs((new_today - new_entry).days)
 
         # if this date difference is not zero
-        if date_difference !=0:
+        if date_difference != 0:
             # if the user posts
             if request.method == "POST":
                 # grab the username
                 username = mongo.db.users.find_one(
-                {"username": session["user"]})["username"]
+                    {"username": session["user"]})["username"]
 
                 # call the get_result() function
                 result = get_result(username)
@@ -405,9 +423,12 @@ def new_entry():
                 total = 0
 
                 # set up the attribute queries to get each individual response
-                # Note that the score calculation/attribute querying is compliant with the DRY principle.
-                # Despite the formulae looking similar for the edit_entry, new_entry & get_result sections of
-                # this file, based on varying factors they are pulling different stored dictionary information to get
+                # Note that the score calculation/attribute querying is
+                # compliant with the DRY principle.
+                # Despite the formulae looking similar for the edit_entry,
+                # new_entry & get_result sections of
+                # this file, based on varying factors they are pulling
+                # different stored dictionary information to get
                 # the necessary attributes selected
                 attr_1_query = final_attributes[0]
                 attr_2_query = final_attributes[1]
@@ -418,8 +439,9 @@ def new_entry():
                 attr_7_query = final_attributes[6]
                 attr_8_query = final_attributes[7]
 
-                # The below if statements match the user's responses on an 
-                # attribute-by-attribute basis and get the correct values from the constant dictionaries.
+                # The below if statements match the user's responses on an
+                # attribute-by-attribute basis and get the correct values
+                # from the constant dictionaries.
                 # The resulting score is then added to the above total counter
                 if attr_1_query == list(ATTRIBUTE_1_DICT.keys())[0]:
                     attr_1_result = list(ATTRIBUTE_1_DICT.values())[0]
@@ -428,7 +450,7 @@ def new_entry():
                 elif attr_1_query == list(ATTRIBUTE_1_DICT.keys())[2]:
                     attr_1_result = list(ATTRIBUTE_1_DICT.values())[2]
                 total += attr_1_result
-                
+
                 if attr_2_query == list(ATTRIBUTE_2_DICT.keys())[0]:
                     attr_2_result = list(ATTRIBUTE_2_DICT.values())[0]
                 elif attr_2_query == list(ATTRIBUTE_2_DICT.keys())[1]:
@@ -485,14 +507,16 @@ def new_entry():
                     attr_8_result = list(ATTRIBUTE_8_DICT.values())[2]
                 total += attr_8_result
 
-                # a dictionary is created based on the users form choices to create the entry
+                # a dictionary is created based on the users form choices
+                # to create the entry
                 entry = {
                     "option_choice": request.form.getlist("options.choice"),
                     "created_by": session["user"],
                     "user_chosen_date": request.form.get("date_choice"),
                     "submission_date": datetime.today().strftime('%Y-%m-%d'),
                     "comment_text": request.form.get("comment_text"),
-                    "name": mongo.db.users.find_one({"username": session["user"]})["_id"],
+                    "name": mongo.db.users.find_one(
+                        {"username": session["user"]})["_id"],
                     "score": total
                 }
                 # insert the entry into the database
@@ -502,19 +526,21 @@ def new_entry():
 
             # grab the form options from mongo db
             options = mongo.db.recovery.find()
-            return render_template("new_entry.html", options = options, date_difference=date_difference)
+            return render_template("new_entry.html", options=options,
+                                   date_difference=date_difference)
 
         else:
             flash("You have made today's entry already!")
             return redirect(url_for("profile", username=username))
 
-    # IndexError statement if the user does not have any entries since account creation
+    # IndexError statement if the user does not have any
+    # entries since account creation
     except IndexError as error:
         # if the user posts
         if request.method == "POST":
             # grab the users username
             username = mongo.db.users.find_one(
-            {"username": session["user"]})["username"]
+                {"username": session["user"]})["username"]
             # call the get_result() function
             result = get_result(username)
 
@@ -533,8 +559,9 @@ def new_entry():
             attr_7_query = final_attributes[6]
             attr_8_query = final_attributes[7]
 
-            # The below if statements match the user's responses on an 
-            # attribute-by-attribute basis and get the correct values from the constant dictionaries.
+            # The below if statements match the user's responses on an
+            # attribute-by-attribute basis and get the correct values
+            # from the constant dictionaries.
             # The resulting score is then added to the above total counter
             if attr_1_query == list(ATTRIBUTE_1_DICT.keys())[0]:
                 attr_1_result = list(ATTRIBUTE_1_DICT.values())[0]
@@ -543,7 +570,7 @@ def new_entry():
             elif attr_1_query == list(ATTRIBUTE_1_DICT.keys())[2]:
                 attr_1_result = list(ATTRIBUTE_1_DICT.values())[2]
             total += attr_1_result
-            
+
             if attr_2_query == list(ATTRIBUTE_2_DICT.keys())[0]:
                 attr_2_result = list(ATTRIBUTE_2_DICT.values())[0]
             elif attr_2_query == list(ATTRIBUTE_2_DICT.keys())[1]:
@@ -607,7 +634,8 @@ def new_entry():
                 "user_chosen_date": request.form.get("date_choice"),
                 "submission_date": datetime.today().strftime('%Y-%m-%d'),
                 "comment_text": request.form.get("comment_text"),
-                "name": mongo.db.users.find_one({"username": session["user"]})["_id"],
+                "name": mongo.db.users.find_one(
+                    {"username": session["user"]})["_id"],
                 "score": total
             }
             # insert the user entry
@@ -617,7 +645,7 @@ def new_entry():
 
         # grab the forms options
         options = mongo.db.recovery.find()
-        return render_template("new_entry.html", options = options)
+        return render_template("new_entry.html", options=options)
 
     else:
         abort(500)
@@ -635,8 +663,9 @@ def all_entries():
         # https://www.programiz.com/python-programming/methods/list/reverse
         # reverse the list
         reversed_list = full_entries_list.reverse()
-        return render_template("all_entries.html", full_entries_list=full_entries_list)
-    
+        return render_template("all_entries.html",
+                               full_entries_list=full_entries_list)
+
     else:
         abort(404)
 
@@ -650,7 +679,7 @@ def search_entries():
     # Index creation: https://docs.mongodb.com/manual/indexes/
     # find the users search input in the database
     entries = list(mongo.db.entries.find({"$text": {"$search": query_entry}}))
-    
+
     return render_template("all_entries.html", full_entries_list=entries)
 
 
@@ -662,8 +691,9 @@ def manage_users():
         # get all users and turn into a list
         full_users = mongo.db.users.find()
         full_users_list = list(full_users)
-        
-        return render_template("manage_users.html", full_users_list=full_users_list)
+
+        return render_template("manage_users.html",
+                               full_users_list=full_users_list)
 
     else:
         abort(404)
@@ -676,13 +706,13 @@ def search_users():
     if session['user'] == "admin":
         username = mongo.db.users.find_one({"username": session["user"]})
 
-        # get the users search input 
+        # get the users search input
         query_user = request.form.get("query_user")
 
         # Index creation: https://docs.mongodb.com/manual/indexes/
         # find the users search input in the database
         users = list(mongo.db.users.find({"$text": {"$search": query_user}}))
-        
+
         return render_template("manage_users.html", full_users_list=users)
 
 
@@ -712,15 +742,17 @@ def get_date(username):
             {"username": session["user"]})["username"]
 
         # find the latest entry made by the user
-        latest_entry_date = mongo.db.entries.find({"created_by": username}).sort(username, -1)
-        
-        # iterate through the latest entry and return the final date of the entry
+        latest_entry_date = mongo.db.entries.find(
+            {"created_by": username}).sort(username, -1)
+
+        # iterate through the latest entry and return the
+        # final date of the entry
         initial_list_date = list(latest_entry_date)
         last_entry_date = initial_list_date[-1]
         last_entry_list_date = list(last_entry_date.items())
         final_date = last_entry_list_date[3][1]
         return final_date
-    
+
     # IndexError if the user has no previous submissions
     except IndexError as error:
         # use of datetime to get todays date
@@ -728,7 +760,8 @@ def get_date(username):
         return todays_date
 
 
-# function to get the result of the users recovery score based on the entry form submission
+# function to get the result of the users recovery score
+# based on the entry form submission
 def get_result(username):
     # try statement to see if the user has submitted an entry for today
     try:
@@ -737,8 +770,9 @@ def get_result(username):
             {"username": session["user"]})["username"]
 
         # find the latest entry
-        latest_entry = mongo.db.entries.find({"created_by": username}).sort(username, -1)
-        
+        latest_entry = mongo.db.entries.find(
+            {"created_by": username}).sort(username, -1)
+
         # get the options chosen by the user on their entry for today
         initial_list = list(latest_entry)
         last_entry = initial_list[-1]
@@ -748,13 +782,17 @@ def get_result(username):
         # start the total counter
         total = 0
 
-        # The below if statements match the user's responses on an 
-        # attribute-by-attribute basis and get the correct values from the constant dictionaries.
+        # The below if statements match the user's responses on an
+        # attribute-by-attribute basis and get the correct values
+        # from the constant dictionaries.
         # The resulting score is then added to the above total counter.
-        # Note that the score calculation/attribute querying is compliant with the DRY principle.
-        # Despite the formulae looking similar for the edit_entry, new_entry & get_result sections of
-        # this file, based on varying factors they are pulling different stored dictionary information to get
-        # the necessary attributes selected 
+        # Note that the score calculation/attribute querying is compliant
+        # with the DRY principle.
+        # Despite the formulae looking similar for the edit_entry, new_entry &
+        # get_result sections of
+        # this file, based on varying factors they are pulling different
+        # stored dictionary information to get
+        # the necessary attributes selected
         attr_1_query = final_attributes[0]
         attr_2_query = final_attributes[1]
         attr_3_query = final_attributes[2]
@@ -771,7 +809,7 @@ def get_result(username):
         elif attr_1_query == list(ATTRIBUTE_1_DICT.keys())[2]:
             attr_1_result = list(ATTRIBUTE_1_DICT.values())[2]
         total += attr_1_result
-        
+
         if attr_2_query == list(ATTRIBUTE_2_DICT.keys())[0]:
             attr_2_result = list(ATTRIBUTE_2_DICT.values())[0]
         elif attr_2_query == list(ATTRIBUTE_2_DICT.keys())[1]:
@@ -826,11 +864,12 @@ def get_result(username):
             attr_8_result = list(ATTRIBUTE_8_DICT.values())[1]
         elif attr_8_query == list(ATTRIBUTE_8_DICT.keys())[2]:
             attr_8_result = list(ATTRIBUTE_8_DICT.values())[2]
-        total += attr_8_result    
-        
+        total += attr_8_result
+
         return total
 
-    # IndexError narrative return for users that havent submitted an entry for today
+    # IndexError narrative return for users that havent
+    # submitted an entry for today
     except IndexError as error:
         narrative = "No entry yet, please submit one"
         return narrative
