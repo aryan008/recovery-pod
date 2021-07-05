@@ -264,8 +264,8 @@ Hence, I want a site where I can:
 8.	Login/Logout
 
 #### Wireframes
-* Desktop/tablet wireframe - [attached](assets/rm_files/wireframe-desktop.pdf)
-* Mobile wireframe - [attached](assets/rm_files/wireframe-mobile.pdf)
+* Desktop/tablet wireframe - [attached](static/rm_files/wireframe-desktop-tablet.pdf)
+* Mobile wireframe - [attached](static/rm_files/wireframe-mobile.pdf)
 
 #### Typography
 Lato is used as the main font on the site, as imported through Google Fonts. Sans-serif is used as the fallback font. According to an article on [perpetual media group](http://www.perpetualmediagroup.ca/tenbestfontsforprintandweb/):
@@ -436,11 +436,18 @@ User Goal | Feature(s)/ Content in response | Goal Met?
 #### Responsive styling
 
 CSS and media queries were used in the style.css file to make a responsive web application for all screen sizes. This has been tested in the testing section below as part of responsive testing. The following media query sizes were used:
-*	max-width:1037px
-*	max-width:796px
-*	max-width:562px
-*	max-width:460px
+*	max-width:1300px
+*	max-width:1135px
+*	max-width:950px
+*	max-width:830px
+*	max-width:762px
+*	max-width:606px
+*	max-width:576px
+*	max-width:533px
+*	max-width:475px
+*	max-width:450pX	
 *	max-width:400px
+*	max-width:360px	
 
 _Note that as part of response testing in the testing section below, the above CSS media rules passed all visual review by the developer._
 
@@ -456,7 +463,7 @@ CSS was used to display buttons accordingly with site users in mind.
 ### How JS created an experience
 The JavaScript code created by the site designer is contained within the below JavaScript Code Library files. Note that the key features provided to the user are detailed below where appropriate as an actual feature, not just JS logic.
 
-JavaScript Library – LINK
+JavaScript Library – [HERE](https://github.com/aryan008/recovery-pod/blob/master/static/js/script.js)
 See the attached [link](testing_results.md) for the screenshot results of JSHint on the below Javascript code. This is also noted in the testing section of this README file.
 
 #### Feature 1 – Active Class
@@ -471,7 +478,7 @@ This JS feature will look at today’s entry submitted by the user and apply sty
 #### Feature 4 – Password reset check
 This JS feature checks that the password reset feature works appropriately. If the new and confirm passwords do not match each other, an error is presented to the user explaining what has happened.
 
-Each individual feature has been fully documented adhering to the following JSDoc framework.
+Each individual feature has been fully documented adhering to the following [JSDoc](https://jsdoc.app/about-getting-started.html) framework.
 
 ### How Python created an experience
 Python, along with the libraries noted below, create an experience for the user.
@@ -627,7 +634,8 @@ On this form to be completed, it begins with a date picker in which the user is 
 Using error handling in Python as documented in the app.py file, a score is then calculated for the user which then redirects them back to their profile and their recovery score for the day.
 The makeup of this scoring matrix and calculation basis is through using a python dictionary for each attribute’s option selection and related score, and then totalling them up. Note that the score has been set up to never exceed 100%.
 
-Before delving into the makeup of these dictionaries, it must be mentioned that not all attributes are created equal. As an example, the attribute of sleep is more heavily weighted scoring wise than say feeling. If a user entered a top score on both, they would get scores of 25% and 10% respectively. This “weighting” allows the users to focus on the “big hitters” of recovery and affirms the age-old wisdom of sleep is paramount. See the below following dictionaries for further information:
+Before delving into the makeup of these dictionaries, it must be mentioned that not all attributes are created equal. As an example, the attribute of sleep is more heavily weighted scoring wise than say feeling. If a user entered a top score on both, they would get scores of 25% and 10% respectively. This “weighting” allows the users to focus on the “big hitters” of recovery and affirms the age-old wisdom of sleep is paramount. 
+![See the below following dictionaries for further information]:
 
 As part of test #2 in the testing section below, if a user were to select the “best” option for each attribute, they would get a recovery score of 100%. Similarly with test #3, if the user were to select the “worst” options, their score would be 32%.
 
