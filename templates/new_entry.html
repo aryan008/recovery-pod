@@ -12,18 +12,18 @@
         <br>
         <!--form for the user to complete-->
         <form method="POST" action="{{ url_for('new_entry') }}">
-            <label for="start" class="me-2">
+            <p class="me-2">
                 Select Today's Date:
-            </label>
-            <!--datepicker for the user to select todays date-->
-            <input type="date" id="date_choice" name="date_choice" value="date_choice" min="2021-06-01" max="2023-06-01"
-                class="date-search" required>
+                <!--datepicker for the user to select todays date-->
+                <span><input type="date" id="date_choice" name="date_choice" min="2021-06-01" max="2023-06-01"
+                        class="date-search" required></span>
+            </p>
             <!--for loop to grab all the options for each attribute-->
             {% for option in options %}
             <div>
                 <br>
                 <p class="entry-option-headings"><u>{{ option.attribute_name }}</u></p>
-                <label for="option.narrative"><em class="option-narratives">{{ option.narrative }}</em></label>
+                <h5><em class="option-narratives">{{ option.narrative }}</em></h5>
                 <br>
                 <br>
                 <!--select dropdown for each option-->
@@ -36,12 +36,12 @@
             <hr class="featurette-divider">
             {% endfor %}
             <br>
-            <label for="comment_text" class="me-2">
+            <p class="me-2">
                 Enter any Comments:
-            </label>
-            <!--comments section for the user to input-->
-            <input id="comment_text" name="comment_text" type="text" class="validate comment-box" minlength="1"
-                maxlength="50">
+                <!--comments section for the user to input-->
+                <span><input id="comment_text" name="comment_text" type="text" class="validate comment-box"
+                        minlength="1" maxlength="50"></span>
+            </p>
             <br>
             <hr class="featurette-divider">
             <!--submit button to post entry-->

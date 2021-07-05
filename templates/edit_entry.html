@@ -7,17 +7,16 @@
         <br>
         <!--form to edit the entry-->
         <form method="POST" action="{{ url_for('edit_entry', username=username) }}">
-            <label for="start" class="me-2">
-                Select Today's Date:
-            </label>
-            <input type="date" id="date_choice" name="date_choice" value="date_choice" min="2021-06-01" max="2023-06-01"
-                class="date-search" required>
+            <p class="me-2">
+                Select Today's Date: <span><input type="date" id="date_choice" name="date_choice" min="2021-06-01"
+                        max="2023-06-01" class="date-search" required></span>
+            </p>
             <!--for loop to bring in each form option-->
             {% for option in options %}
             <div>
                 <br>
                 <p class="entry-option-headings"><u>{{ option.attribute_name }}</u></p>
-                <label for="option.narrative"><em class = "option-narratives">{{ option.narrative }}</em></label>
+                <h5><em class="option-narratives">{{ option.narrative }}</em></h5>
                 <br>
                 <br>
                 <select name="options.choice" id="options.choice" class="options-dropdown">
@@ -30,11 +29,10 @@
             {% endfor %}
             <br>
             <!--comments text box for the user-->
-            <label for="comment_text" class="me-2">
-                Enter any Comments:
-            </label>
-            <input id="comment_text" name="comment_text" type="text" class="validate comment-box" minlength="1"
-                maxlength="50">
+            <p class="me-2">
+                Enter any Comments: <span><input id="comment_text" name="comment_text" type="text"
+                        class="validate comment-box" minlength="1" maxlength="50"></span>
+            </p>
             <br>
             <hr class="featurette-divider">
             <!--entry edit submission-->
