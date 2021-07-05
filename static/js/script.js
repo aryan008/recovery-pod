@@ -23,9 +23,9 @@ jQuery(function ($) {
 $('.score-percentage').each(function() {
     let tableScore = $(this);
     // get the score of each entry
-    let score = tableScore.text()
+    let score = tableScore.text();
     // convert each score to numerical
-    let numberScore = parseInt(score)
+    let numberScore = parseInt(score);
     
     // apply appropriate classes depending on the score
     if (numberScore >=70) {
@@ -43,9 +43,9 @@ $('.result-container').each(function() {
     // grab the result the user got
     let userScore = $(".inner-container p");
     // get rid of the percent sign
-    let splitScore = userScore.text().split("%")
+    let splitScore = userScore.text().split("%");
     // convert the score to an integer
-    let actualScore = parseInt(splitScore[0])
+    let actualScore = parseInt(splitScore[0]);
     
     // apply appropriate classes depending on the score
     if (actualScore >=70) {
