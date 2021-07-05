@@ -786,6 +786,31 @@ No fixes from the above test were necessary on review of the results.
 
 No fixes from the above test were necessary on review of the results.
 
+### Manual Testing
+Note that the manual testing below does not include screenshots of the result. The site developer has manually tested them and ensured the testing is completed appropriately.
+Test #|Narrative|Expected|Test Narrative|Result|Fix
+-------- | --------- | -------- | -------- | -------- | --------
+1|Site visitor navbar headers |Only Home/About/Login/Create account present |Viewed site as a visitor |Pass |N/A
+2|Score is 100% on all top form entries |100% on user profile |Submit an entry with best options |Pass |N/A
+3|Score is 32% on all top form entries |32% on user profile |Submit an entry with worst options |Pass |N/A
+4|Colouring on result circle is appropriate |Green/Yellow/Red depending on score |Tested multiple score submissions for different users |Pass |N/A
+5|Site user navbar headers |Present: Home/About/All entries/Manage Profile/New Entry/Log out/Settings |Viewed site as a visitor |Pass |N/A
+6|Site admin navbar headers |Present: Same as 5) above with manage users in navbar |Viewed site as the admin |Pass |N/A
+7|Linked text/sourced redirects work appropriately |Redirect to appropriate page on clicking/Sources open on new page |Clicked on all links in site |Pass |N/A
+8|Footer links work appropriately |New tab with footer URL present |Clicked on the footer elements |Pass |N/A
+9|Buttons are clearly displayed on all device sizes |Clear visibility of buttons |Viewed buttons on all device sizes |Pass |N/A
+10|Login error handling |Username and password check and correct errors |Tried to login with username/Password incorrect |Pass |N/A
+11|Create account error handling |Username and password check and correct errors |Tried to create an account with (a)Username exists (b) Incorrect text format |Pass |N/A
+12|Home page site user buttons |Login/Create account buttons disappear on login |Logged in and viewed if buttons found |Pass |N/A
+13|All entries show all entries |All entries shown for all users |Viewed the entries and compared to database |Pass |N/A
+14|Search bar on all entries |Search bar search/no results found shown appropriately |Tried to search a user that exists and that doesnt exist |Pass |N/A
+15|Reset bar on all entries |Reset the page to show all entries |Found a user and hit reset button |Pass |N/A
+16|Prompt on profile for no entry today |A message prompting the user to submit their entry for today |Logged in as a user with no entry for today |Pass |N/A
+17|Review of narrative on user score |Recovered/Moderately/Low depending on score |Tested multiple score submissions for different users |Pass |N/A
+18|Edit entry redirect and update |On clicking the edit entry, the user is redirected to edit that entry and when posted it updates the database |Edited an entry a user has submitted |Pass |N/A
+19|Delete entry message and deletion |On clicking delete entry, entry wiped from database and user prompt message appears |Deleted an entry to view result |Pass |N/A
+20| | | | |
+
 ### Testing User Stories from User Experience (UX) Section
 
 #### First-Time Visitor Goals
@@ -915,6 +940,7 @@ The project already contains a .gitignore file which contains env.py
 * Code Institutes [pre-installed gitpod repository](https://github.com/Code-Institute-Org/gitpod-full-template)
 * Responsive image at the top of the ReadMe file is from [Am I Responsive](http://ami.responsivedesign.is/).
 * Bootstrap 5: [Link](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+* Inspiration for the project was taken from [Whoop.com](https://www.whoop.com/?gclid=Cj0KCQjw24qHBhCnARIsAPbdtlJMEeBAwL6vnVGpczV1gEFtw6Z9vybBGAYaTQhIIfbe7UPaKCGNbxAaAjisEALw_wcB)
 
 ### Media
 #### Attribute sources/links
