@@ -13,7 +13,7 @@
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                         <!--text input for username-->
                         <input type="text" id="username" name="username" class="form-control validationCustomUsername" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" aria-describedby="inputGroupPrepend" required>
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" aria-label="input field for username" required>
                         <div class="invalid-feedback">Enter your username.</div>
                     </div>
                 </div>
@@ -25,13 +25,13 @@
                         maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" aria-label="input field for password" required>
                 </div>
                 <!--login button-->
-                <button type="submit" class="btn btn-success btn-outline-light btn-lg login-button">Log In</button>
+                <button type="submit" class="btn btn-success btn-outline-light btn-lg login-button" aria-label="login button">Log In</button>
             </form>
             <br>
             <div>
                 <p>New Here?
                     <!--account creation helper link-->
-                    <a href="{{ url_for('create_account') }}" class="light-blue-text text-darken-4 link-colouring">Create an
+                    <a href="{{ url_for('create_account') }}" class="light-blue-text text-darken-4 link-colouring" aria-label="create account link">Create an
                         Account</a>
                 </p>
             </div>

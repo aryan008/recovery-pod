@@ -16,7 +16,7 @@
                 Select Today's Date:
                 <!--datepicker for the user to select todays date-->
                 <span><input type="date" id="date_choice" name="date_choice" min="2021-06-01" max="2023-06-01"
-                        class="date-search" required></span>
+                        class="date-search" aria-label="date calendar - select todays date" required></span>
             </p>
             <!--for loop to grab all the options for each attribute-->
             {% for option in options %}
@@ -40,12 +40,12 @@
                 Enter any Comments:
                 <!--comments section for the user to input-->
                 <span><input id="comment_text" name="comment_text" type="text" class="validate comment-box"
-                        minlength="1" maxlength="50"></span>
+                        minlength="1" maxlength="50" aria-label="enter any comments"></span>
             </p>
             <br>
             <hr class="featurette-divider">
             <!--submit button to post entry-->
-            <button type="submit" class="btn btn-success post-entry-button">Post Entry</button>
+            <button type="submit" class="btn btn-success post-entry-button" aria-label="post entry button">Post Entry</button>
         </form>
     </div>
 </div>

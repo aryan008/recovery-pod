@@ -11,12 +11,12 @@
                     <label for="query_entry" class="me-2">
                         Search Users
                     </label>
-                    <input type="text" name="query_entry" id="query_entry" class="validate search-bar" required>
+                    <input type="text" name="query_entry" id="query_entry" class="validate search-bar" aria-label="input field to search users" required>
                 </div>
                 <br>
                 <div>
-                    <a href="{{ url_for('all_entries') }}" class="btn btn-danger btn-sm reset-button">Reset</a>
-                    <button type="submit" class="btn btn-info btn-sm search-button">Search</button>
+                    <a href="{{ url_for('all_entries') }}" class="btn btn-danger btn-sm reset-button" aria-label="reset button">Reset</a>
+                    <button type="submit" class="btn btn-info btn-sm search-button" aria-label="search button">Search</button>
                 </div>
             </form>
             <br>
