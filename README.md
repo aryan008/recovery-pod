@@ -795,69 +795,56 @@ No fixes from the above test were necessary on review of the results.
 As a first-time visitor of the site, I want:
 
 1.	_My impression of the site to be a positive experience_
-*	Colour/Font/Layout/Scoring structure. 
-*	Responsive button elements and appropriate redirects/CRUD messages. 
+*	Colour/Font/Layout/Scoring structure. Linked [here](static/rm_files/us-1.1-1.3.PNG).
+*	Responsive button elements and appropriate redirects/CRUD messages. Linked [here](static/rm_files/us-1.2.PNG).
 *	Clear call to action on user progression from site landing to entry submission.
-USER STORY SCREENSHOT
 
 2.	_To understand the main purpose of the site_
-*	Displayed on the landing “home” page
-USER STORY SCREENSHOT
+*	Displayed on the landing “home” page. Linked [here](static/rm_files/us-2.1.PNG).
 
 3.	_To provide relevant content related to athlete recovery and the main metrics of score calculation_
-*	Content on the “home”/ “about” page related to user recovery and appropriate narration. 
-*	Main attributes and their importance listed on both pages
-USER STORY SCREENSHOT
+*	Content on the “home”/ “about” page related to user recovery and appropriate narration. _Screenshot of point made above._
+*	Main attributes and their importance listed on both pages. _Screenshot of point made above._
 
 4.	_A clear and unambiguous layout, including a clear recovery score after my form submission_
-*	Colour/Font/Layout/Scoring structure. 
-*	On form submission for the day, redirect to user profile and large circle showing today’s result with appropriate colouring scheme.
-USER STORY SCREENSHOT
+*	Colour/Font/Layout/Scoring structure. _Screenshot of point made above._
+*	On form submission for the day, redirect to user profile and large circle showing today’s result with appropriate colouring scheme. _Screenshot of point made above._
 
 5.	_CRUD functionality upon account/entry creation_
-*	Users can create an entry, edit their entry, delete their entry, read their entry. 
-*	Delete account/ password edit feature also available.
-USER STORY SCREENSHOT
+*	Users can create an entry, edit their entry, delete their entry, read their entry. Linked [here](static/rm_files/us-5.1.PNG).
+*	Delete account/ password edit feature also available. Linked [here](static/rm_files/us-5.2(a).PNG) and [here](static/rm_files/us-5.2(b).PNG).
 
 6.	_A quick “create account” feature on landing on the site_
-*	Site landing page has (once user not logged in) buttons to redirect to login/ create an account
-USER STORY SCREENSHOT
+*	Site landing page has (once user not logged in) buttons to redirect to login/ create an account. Linked [here](static/rm_files/us-6(a).PNG) and [here](static/rm_files/us-6(b).PNG).
 
 7.	_An instant feedback loop from form submission to the recovery score of the day_
-*	Flash message present that today’s entry has been made after form submission followed by an immediate redirect to user profile to view their score.
-USER STORY SCREENSHOT
+*	Flash message present that today’s entry has been made after form submission followed by an immediate redirect to user profile to view their score. _Screenshot of point made above._
 
 8.	_Easy navigation of the site_
-*	Navbar present at the top of each page. 
-*	Use of JavaScript to apply an “active” class to show the user what page they’re on. 
-*	Registered/logged in users see the full suite of pages available on the site. 
+*	Navbar present at the top of each page. Linked [here](static/rm_files/us-8.1.PNG).
+*	Use of JavaScript to apply an “active” class to show the user what page they’re on. Linked [here](static/rm_files/us-8.2.PNG).
+*	Registered/logged in users see the full suite of pages available on the site. Linked [here](static/rm_files/us-8.3.PNG).
 *	404 and 500 error handing applied for any issues with the site where the user is redirected back to the site should these errors occur. 
-*	User submission navigation prompts are present whether the user has/ has not submitted today’s score.
-USER STORY SCREENSHOT
+*	User submission navigation prompts are present whether the user has/ has not submitted today’s score. Linked [here](static/rm_files/us-8.5.PNG).
 
 9.	_Built-in safety protocols – single entries, user authentication, appropriate redirects_
-*	User authentication used on login/ create an account where the username is checked for a username of that name in the database. 
-*	Passwords must match a specified format. 
-*	Flash error messages are displayed on both points above if either show as an error. 
-*	Double entry attempts by the user on the same day are prevented via a redirect back to today’s score and profile, prompting the user to use the designated buttons to interact with their entry.
-USER STORY SCREENSHOT
+*	User authentication used on login/ create an account where the username is checked for a username of that name in the database. Linked [here](static/rm_files/us-9.1.PNG).
+*	Passwords must match a specified format. Linked [here](static/rm_files/us-9.2.PNG).
+*	Flash error messages are displayed on both points above if either show as an error. _Screenshot of point made above._
+*	Double entry attempts by the user on the same day are prevented via a redirect back to today’s score and profile, prompting the user to use the designated buttons to interact with their entry. Linked [here](static/rm_files/us-9.4.PNG).
 
 10.	_The ability to edit/delete my entry for the day_
-*	As part of CRUD functionality, present on the profile of the user
-USER STORY SCREENSHOT
+*	As part of CRUD functionality, present on the profile of the user. _Screenshot of point made above._
 
 11.	_The ability to delete my account_
-*	As part of CRUD functionality, present on the profile of the user
-USER STORY SCREENSHOT
+*	As part of CRUD functionality, present on the profile of the user. _Screenshot of point made above._
 
 12.	_To view the recovery score of the day to clearly see how recovered I am_
-*	Available on the user’s profile page should a submission be made on the day. 
-*	If the user has yet to make an entry, narrative appears on the profile page that they have not made today’s entry yet and should make that entry now.
-USER STORY SCREENSHOT
+*	Available on the user’s profile page should a submission be made on the day. _Screenshot of point made above._
+*	If the user has yet to make an entry, narrative appears on the profile page that they have not made today’s entry yet and should make that entry now. _Screenshot of point made above._
 
 13.	_The colours, layout and feel of the site to be of an athlete nature as part of cultural appropriation_
-*	Noted as part of the visual hierarchy section above.
-USER STORY SCREENSHOT
+*	Noted as part of the visual hierarchy section above. _Screenshot of point made above._
 
 #### Returning and Frequent Visitor Goals
 As a returning/frequent visitor of the site, I want:
