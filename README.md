@@ -1012,8 +1012,8 @@ Key |	Value
 IP |	0.0.0.0
 PORT |	5000
 SECRET_KEY |	Secure secret key
-MONGO_URI |	mongodb+srv://root:PASSWORD@myfirstcluster.lkzob.mongodb.net/recovery_pod?retryWrites=true&w=majority
-MONGO_DBNAME |	recovery_pod
+MONGO_URI |	mongodb+srv://root:<password>@<database name>.lkzob.mongodb.net/<collection name>?retryWrites=true&w=majority
+MONGO_DBNAME |	Database name
 
 * Go back to the 'Deploy' tab and you can now click 'Enable Automatic Deployment'
 * Underneath, locate 'Manual Deploy'; choose the master branch and click 'Deploy Branch'
