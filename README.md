@@ -23,6 +23,7 @@ The aim of this site is to allow the user of the site to calculate their recover
 *	A green/yellow/red recovery colouring scheme that allows high-impact colouring across the site
 
 The site is designed to be responsive and accessible across all device sizes, as defined in the testing section of this ReadMe file.
+The design is to be a front end data-driven web application with a non-relational database-backed Flask application, which allows users to store and manipulate data records about a particular domain.
 The site is also designed to handle the full suite of user management, as defined in the Information architecture of this ReadMe file.
 
 
@@ -576,6 +577,7 @@ The database used for this project is MongoDB. The main database contains four c
 *	Entries
 *	Recovery
 *	Users
+
 Throughout the Python app.py file, various Mongo DB requests are made to get the appropriate information from the database and rendered to their appropriate html pages.
 
 #### Attributes
@@ -863,6 +865,14 @@ Test #|Narrative|Expected|Test Narrative|Result|Fix
 36|URL manual edits |User cannot manually enter in a different users URL to view that different account |Manually edited the URL of a different user to view the page |Pass |N/A
 37|Confirmtion messages on all "delete" buttons |When a user/admin tries to delete an account/their account or entry respectively, the user is prompted with an "Are you sure?". Once they hit ok, the action is passed and the function executes. If they cancel, the action is disabled |As both admin and user, reviewed to ensure this message is prompted |Pass |N/A
 38|Navbar page currently on is highlighted and underlined |Whatever site page the visitor/user/admin is on, the navbar is highlighted and underlined |Clicked through all the pages for all user types |Pass |N/A
+
+#### Key Testing - Overall
+Area|Expected|Test Narrative|Result|Fix
+-------- | --------- | -------- | -------- | --------
+Functionality|Site interaction/scoring/user type access handles appropriately |Tested as part of manual testing above |Pass |N/A
+Usability|User type access and site use works appropriately |Tested as part of manual testing above |Pass |N/A
+Responsiveness|Site works correctly on all screen sizes |Reviewed as part of the responsiveness/accessibility testing section |Pass |N/A
+Data Management|Mongo DB creates/updates/deletes appropriately on user interaction of site |Tested as part of manual testing above |Pass |N/A
 
 ### Testing User Stories from User Experience (UX) Section
 
