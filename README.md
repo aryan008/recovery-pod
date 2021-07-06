@@ -45,7 +45,7 @@ The site is also designed to handle the full suite of user management, as define
   *	[User stories](#user-stories)
 
 * [Design Features](#design-features)
-  1.  [Wireframes](#wireframes)
+  1. [Wireframes](#wireframes)
   2.	[Typography](#typography)
   3.	[Colour scheme](#colour-scheme)
   4.	[Imagery](#imagery)
@@ -78,7 +78,6 @@ The site is also designed to handle the full suite of user management, as define
   * [Accessibility testing](#accessibility-testing)
   * [Responsive testing](#responsive-testing)
   * [Manual testing](#manual-testing)
-  * [Further testing](#further-testing)
   * [Testing user stories from User Experience (UX) section](#testing-user-stories-from-user-experience-ux-section)
   * [Known bugs](#known-bugs)
 
@@ -792,7 +791,7 @@ See the below to review the screenshots of successful accessibility testing on t
 
 No issues noted on the lighthouse testing.
 
-[WAVE](https://wave.webaim.org/) Web Accessibility. For the WAVE specific testing live link, click on the [following](https://wave.webaim.org/report#/https://recovery-pod.herokuapp.com/).
+[WAVE](https://wave.webaim.org/) Web Accessibility. For the WAVE specific testing live link, click on the [following](https://wave.webaim.org/report#/https://recovery-pod.herokuapp.com/). Note that aria-labels have been appropriately added throughout the site.
 
 WAVE testing yielded the following update:
 Commit [#168](https://github.com/aryan008/recovery-pod/commit/1ae6a3da7b9f10aa72885b678453d52ee9cb78ac) – edits to colouring of buttons for contrast
