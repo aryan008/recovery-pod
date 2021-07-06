@@ -463,7 +463,8 @@ CSS was used to display buttons accordingly with site users in mind.
 ### How JS created an experience
 The JavaScript code created by the site designer is contained within the below JavaScript Code Library files. Note that the key features provided to the user are detailed below where appropriate as an actual feature, not just JS logic.
 
-JavaScript Library – [HERE](https://github.com/aryan008/recovery-pod/blob/master/static/js/script.js)
+JavaScript Library – [here](https://github.com/aryan008/recovery-pod/blob/master/static/js/script.js).
+
 See the attached [link](testing_results.md) for the screenshot results of JSHint on the below Javascript code. This is also noted in the testing section of this README file.
 
 #### Feature 1 – Active Class
@@ -767,10 +768,12 @@ The following fix was necessary on review of the results:
 * Commit [#165](https://github.com/aryan008/recovery-pod/commit/8a2dc10cb0173f86474a54830b98c99f215ac55a) – Fix value of none for home page circle in style.css
 
 The JavaScript Code Library file was validated using the JSHint static code analysis tool.
+
 [JSHint JS Validator](https://jshint.com/) – [Results screenshot](static/rm_files/jshint-result.PNG)
 No fixes from the above test were necessary on review of the results.
 
-[PEP8 Online](http://pep8online.com/)– [Results screenshot](static/rm_files/pep8-result.PNG)
+[PEP8 Online](http://pep8online.com/)– [Results screenshot](static/rm_files/pep8-result.PNG).
+
 As part of commit #167, fixes were necessary on review of the results.
 
 [GTMetrix](https://gtmetrix.com/)– [Results screenshot](static/rm_files/gtmetrix-result.PNG)
@@ -787,7 +790,7 @@ See the attached [link](testing_results.md) for the screenshot results of the Ac
 See the below to review the screenshots of successful accessibility testing on the site for Google Lighthouse.
 
 * Lighthouse mobile: [link](static/rm_files/lighthouse-mobile.PNG)
-* Lighthouse desktop: [link](assets/rm_files/lighthouse-desktop.PNG)
+* Lighthouse desktop: [link](static/rm_files/lighthouse-desktop.PNG)
 
 No issues noted on the lighthouse testing.
 
