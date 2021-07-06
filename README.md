@@ -64,10 +64,10 @@ The site is also designed to handle the full suite of user management, as define
   *	[How Python created an experience](#how-python-created-an-experience)
   *	[Site Logic and diagram](#site-logic-and-diagram)
   *	[User Types and permissions](#user-types-and-permissions)
-  *	[CRUD Functionality](#crud-functionality)
+  *	[CRUD Functionality](#crud---create-read-update-and-delete)
   *	[Mongo DB Database Structure](#mongo-db-database-structure)
   *	[Metric scoring](#metric-scoring)
-  *	[Python logic - Brief](#python-logic-brief)
+  *	[Python logic - Brief](#python-logic---brief)
 
 * [Technology and Languages used](#technology-and-languages-used)
   *	[Languages](#languages)
