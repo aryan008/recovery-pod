@@ -1,6 +1,6 @@
 <h1 align = "center">Recovery Pod</h1>
 
-View the live project at the following [link](https://recovery-pod.herokuapp.com/)
+View the live project at the following [link](https://recovery-pod.herokuapp.com/).
 
 ![See how the site looks across the devices](static/rm_files/responsive.PNG)
 
@@ -757,6 +757,8 @@ The following fixes were necessary on review of the results:
 * Commit [#161](https://github.com/aryan008/recovery-pod/commit/615c19b14a14b2b520b2fcf510068efb84b3a676) – aria label and label fix
 * Commit [#162](https://github.com/aryan008/recovery-pod/commit/08ab022d8e2919251f9809438c428df412e2ba06) – Fix of label on edit/new entry forms
 
+Note that the HTML Validator screenshot noted above is for the site live URL. Refer to the "Known bugs" section of this ReadMe foe individual page error narration.
+
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - [Results screenshot](static/rm_files/jigsaw-validator-result.PNG)
 
@@ -942,6 +944,8 @@ There are known bugs in the site as discussed below - split between actual and v
 Despite these known bugs, in the interest of time I will have to leave it in the site even though I would prefer to get them fixed.
 
 #### HTML Validator Bugs
+As per the W3C HTML validation testing as part of the testing section of this ReadMe file, the screenshot in the afore mentioned area relates to the site URL plugged in to the validator. To test individual page errors, I put all of the HTML code for each page seperately into the validator to view each pages' results. The below are the unedited errors along with documentation explaining they are not "true" errors. 
+
 *	No p element in scope but a p end tag seen(Profile page). This is due to the Jinja templating not recognising that the p class is part of the else statement. Not a true error and so can be discarded. See [screenshot](static/rm_files/profile-page-p-error.PNG) for error and [screenshot](static/rm_files/profile-page-p-code.PNG) for code showing to be unrecognised as an error
 *	Stray end tag head. This is due to the Jinja templating not recognising that the head tag has been opened and closed appropriately. Not a true error and so can be discarded. See [screenshot](static/rm_files/base-page-head-error.PNG) for error and [screenshot](static/rm_files/base-page-head-code.PNG) for code showing to be unrecognised as an error
 *	Start tag body seen but an element of the same type was already open. This is due to the Jinja templating not recognising that the body tag has been opened and closed appropriately. Not a true error and so can be discarded. See [screenshot](static/rm_files/base-page-body-error.PNG) for error and [screenshot](static/rm_files/base-page-body-code.PNG) for code showing to be unrecognised as an error, and further at the bottom of the base.html page for closing body tag.
