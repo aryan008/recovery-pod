@@ -503,7 +503,7 @@ Python, along with the libraries noted below, create an experience for the user.
 (7)	Score calculation – see the Metric Scoring section below
 
 ### Site Logic and diagram
-The game logic was developed using Python, Flask, PyMongo, Json, Werkzeug, Heroku, JavaScript and JQuery. Jinja templating language was utilised in the creation of the site.
+The site logic was developed using Python, Flask, PyMongo, Json, Werkzeug, Heroku, JavaScript and JQuery. Jinja templating language was utilised in the creation of the site.
 When a visitor lands on the site, they can read both the home and about page. They also have an option to login or create an account.
 Once they have created this account/ logged in, the site navbar allows them to:
 *	Create today’s entry
@@ -577,7 +577,7 @@ The database used for this project is MongoDB. The main database contains four c
 *	Recovery
 *	Users
 
-Throughout the Python app.py file, various Mongo DB requests are made to get the appropriate information from the database and rendered to their appropriate html pages.
+Throughout the Python app.py file, various Mongo DB requests are made to get the appropriate information from the database and rendered to their appropriate html pages. See below for the contents of the four collections.
 
 #### Attributes
 This collection contains the eight attribute names upon which the site calculates scores on user submission.
