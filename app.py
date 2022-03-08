@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = os.environ.get("SECRET_KEY")
+app.secret_key = os.environ.get("MONGO_SECRET_KEY")
 
 # Create the eight dictionaries that house the user form response scoring
 ATTRIBUTE_1_DICT = {"No": 2, "Yes - Pool": 3, "Yes - Ice Bath/Sea Swim": 5}
